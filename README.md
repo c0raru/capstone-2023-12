@@ -1,5 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10521377&assignment_repo_type=AssignmentRepo)
-<!--# Welcome to GitHub
+<!--# Welcome to GitHub-->
 
 캡스톤 팀 생성을 축하합니다.
 
@@ -15,7 +15,7 @@
 - GitHub Pages 리파지토리 Settings > Options > GitHub Pages 
   - Source를 marster branch
   - Theme Chooser에서 태마선택
-  - 수정후 팀페이지 확인하여 점검. -->
+  - 수정후 팀페이지 확인하여 점검. 
 
 팀페이지 주소 : 2023년 12조 https://kookmin-sw.github.io/capstone-2023-12
 
