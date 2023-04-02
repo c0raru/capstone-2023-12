@@ -32,7 +32,6 @@ class User(AbstractBaseUser):
     username = models.CharField("아이디", max_length=100, unique=True)
     email = models.CharField("이메일", max_length=100, unique=True)
     fullname = models.CharField("이름", max_length=100)
-    nickname = models.CharField("닉네임", max_length=100)
 
     is_admin = models.BooleanField("어드민", default=False)
 

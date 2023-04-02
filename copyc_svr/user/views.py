@@ -15,6 +15,7 @@ from django.contrib.auth import user_logged_in
 from django.dispatch.dispatcher import receiver
 from django.contrib.sessions.models import Session
 import dateutil.parser
+from serializers import UserSerializer
 
 import smtplib
 from email.mime.text import MIMEText
@@ -116,19 +117,21 @@ class UserAPI(APIView):
         return JsonResponse(**NORMAL)
 
     def post(self, request):
-        email = request.data.get("email", "")
+        username = request.data.get("username", "")
         password = request.data.get("password", "")
 
-        user = authenticate(request, username=email, password=password)
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return JsonResponse(**NORMAL)
+            return JsonResponse({})
 
-        return JsonResponse(**WRONG_ACCOUNT)
+        return JsonResponse({
+            "user": ["아이디 또는 비밀번호가 올바르지 않습니다."]
+        }, status=400)
 
     def delete(self, request):
         logout(request)
-        return JsonResponse(**NORMAL)
+        return JsonResponse({})
 
 
 class FindEmail(APIView):
