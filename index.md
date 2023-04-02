@@ -1,6 +1,6 @@
 팀페이지 주소 : 2023년 12조 https://kookmin-sw.github.io/capstone-2023-12
 
-<img alt="main" src="img/copyc.jpg" width=400>
+<img alt="main" src="img/Copyc.png" width=400>
 
 ## 목차
 
