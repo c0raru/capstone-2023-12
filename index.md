@@ -1,6 +1,6 @@
 팀페이지 주소 : 2023년 12조 https://kookmin-sw.github.io/capstone-2023-12
 
-<img alt="main" src="copyc.jpg">
+<img alt="main" src="img/copyc.jpg" width=400>
 
 ## 목차
 
@@ -19,6 +19,7 @@
 - 서비스 이용 대상자
     - 웹툰 작가와 지망생, 그 외 일러스트레이터 등 저작권에서 자유로운 사진을 사용하고 싶은 누구나
 
+<img src="img/MainPage.png" width=200> <img src="img/InPage.png" width=200>
 
 <!--###  소개 영상 -->
 
@@ -30,10 +31,22 @@
 
 ## 4. 팀 소개
 
-정현서 (****1693) 프론트엔드 개발
+- 정현서
 
-임예도 (****1682) 백엔드 개발
+```
+* 학번: ****1693
+* Role: Team Leader, FrontEnd
+* E-mail: coraru@kookmin.ac.kr
+```
+
+- 임예도
+
+```
+* 학번: ****1682
+* Role: BackEnd, Deployment
+* E-mail: ydim@kookmin.ac.kr
+```
 
 ## 5. 사용법
 
-추후 가 예정
+추후 추가 예정
