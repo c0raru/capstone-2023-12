@@ -1,7 +1,6 @@
 from django.apps import AppConfig
 
 
-class UserConfig(AppConfig):
+class ImageConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'user'
-    verbose_name = "사용자 관리"
+    name = 'image'
