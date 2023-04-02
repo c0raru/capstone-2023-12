@@ -1,9 +1,11 @@
 팀페이지 주소 : 2023년 12조 https://kookmin-sw.github.io/capstone-2023-12
+<br/></br>
 
 <div align=center>   
-    <img alt="main" src="img/Copyc.png" width=400>
+    <img alt="main" src="img/Copyc.png" width=500>
 </div>
-    
+<br/></br>
+
 <div align=center>
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black">
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
@@ -12,9 +14,6 @@
     <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
     <img src="https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=Yarn&logoColor=white">
     <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
-</div>
-
-<div align=center>
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
     <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=Django&logoColor=white">
     <img src="https://img.shields.io/badge/Rest-A30200?style=for-the-badge&logo=&logoColor=white">
