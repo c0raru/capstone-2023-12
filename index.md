@@ -25,14 +25,14 @@
 
 ## 목차
 
-1. [프로젝트 소개](#프로젝트-소개)
-2. [Abstract](#Abstract)
-3. [소개 영상](#소개-영상)
-4. [팀 소개](#팀-소개)
-5. [사용법](#사용법)
-6. [상세 기능](#상세-기능)
-7. [Document](#Document)
-
+1. [프로젝트 소개](#1.-프로젝트-소개)
+2. [Abstract](#2.-abstract)
+3. [소개 영상](#3.-소개-영상)
+4. [팀 소개](#4.-팀-소개)
+5. [사용법](#5.-사용법)
+6. [상세 기능](#6.-상세-기능)
+7. [Document](#7.-document)
+<br/>
 
 ## 1. 프로젝트 소개
 
@@ -83,11 +83,9 @@ An artist living in Seoul will share the appearance of various buildings. An art
 
 시연 영상에서는 **Copyc**에서 제공될 기능들을 미리 확인하실 수 있습니다.
 
-아래 이미지를 클릭하면 유튜브로 연결됩니다.
+[<img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=YouTube&logoColor=white">](https://youtu.be/vuvmn3MwAls)
 
-[<img src="img/MainPage.png" width=20%>](https://youtu.be/vuvmn3MwAls)
-<br/>
-
+위 아이콘을 클릭해 YouTube 시연 영상 페이지로 이동하실 수 있습니다.
 
 ## 4. 팀 소개
 
@@ -111,7 +109,7 @@ An artist living in Seoul will share the appearance of various buildings. An art
 
 ## 5. 사용법
 
-배포 이후 추가 예정
+최종 배포 이후 추가 예정
 <br/>
 
 ## 6. 상세 기능
@@ -124,5 +122,5 @@ An artist living in Seoul will share the appearance of various buildings. An art
 
 ## 7. Document
 **중간 발표**
-- [중간보고서](https://drive.google.com/file/d/1AJvlI3NF3VdvhCjl1MGUeuisq3TVIt9F/view?usp=share_link)
-- [중간발표자료](https://drive.google.com/file/d/10hzdsp8c0jxI6BGmewgYfPSNsfWUuoh4/view?usp=share_link)
+- [중간보고서](https://drive.google.com/file/d/12mVLmLgrs-cM3martpn90DJj2BWDxbky/view?usp=share_link)
+- [중간발표자료](https://drive.google.com/file/d/1F9brloHz6PgaKsG11iMcyqmsTgwyOUM1/view?usp=share_link)
