@@ -115,8 +115,12 @@ An artist living in Seoul will share the appearance of various buildings. An art
 <br/>
 
 ## 6. 상세 기능
-[Figma](https://www.figma.com/file/8diQISW7sASCoCX9au06pY/Untitled?node-id=0%3A1&t=eLfRtNymkIzxVkie-1)
-<br/>
+[<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white">](https://www.figma.com/file/8diQISW7sASCoCX9au06pY/Untitled?node-id=0%3A1&t=eLfRtNymkIzxVkie-1)
+
+위 아이콘을 눌러 Figma 페이지로 이동하실 수 있습니다.
+
+<img src="img/1.png">
+<img src="img/2.png">
 
 ## 7. Document
 **중간 발표**
