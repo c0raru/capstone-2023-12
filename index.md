@@ -36,8 +36,9 @@
 
 ## 1. 프로젝트 소개
 
-**Copyc (카픽: Copyright + Picture)**
-
+**Copyc**
+> [카픽] : Copyright + Picture
+> 
 <img src="img/MainPage.png" width=250> <img src="img/InPage.png" width=250>
 
 - 웹툰 작가들을 위한 저작권 없는 이미지 공유 모바일 플랫폼
@@ -56,7 +57,7 @@
 서울 한복판에 사는 작가는 여러 건물들의 모습을 공유할 것이다.
 해운대 앞에 사는 작가는 바닷가 사진을 공유할 것이다.
 제주도에 사는 작가는 제주도 곳곳의 아름다운 풍경들을 공유할 것이다.
-Copyc에서 나누게 될 사진들은 누군가에게는 쓸모 없을, 잘 찍었다고 할 수도 없는 사진들이겠지만 웹툰 작가들에게는 무엇보다도 필요한 자원이 될 것이다.
+Copyc에서 나누게 될 사진들은 누군가에게는 쓸모 없을, 잘 찍었다고 할 수도 없는 사진들이겠지만 웹툰 작가들에게는 그들의 니즈에 꼭 맞는, 무엇보다도 필요했던 자원이 될 것이다.
 
 
 - 서비스 이용 대상자
@@ -65,7 +66,8 @@ Copyc에서 나누게 될 사진들은 누군가에게는 쓸모 없을, 잘 찍
 
 ## 2. Abstract
 
-**Copyc (Copyright + Picture)**
+**Copyc**
+> Copyright + Picture
 - A mobile platform for sharing copyright-free images for webtoon artists that allows for commercial use.
 <br/>
 
@@ -77,8 +79,15 @@ An artist living in Seoul will share the appearance of various buildings. An art
 <br/>
 
 ## 3. 소개 영상
-[Figma](https://www.figma.com/file/8diQISW7sASCoCX9au06pY/Untitled?node-id=0%3A1&t=eLfRtNymkIzxVkie-1)
+프로젝트 데모 Figma 디자인 시연 영상입니다.
+
+시연 영상에서는 **Copyc**에서 제공될 기능들을 미리 확인하실 수 있습니다.
+
+아래 이미지를 클릭하면 유튜브로 연결됩니다.
+
+[<img src="img/MainPage.png" width=20%>](https://youtu.be/vuvmn3MwAls)
 <br/>
+
 
 ## 4. 팀 소개
 
@@ -102,10 +111,18 @@ An artist living in Seoul will share the appearance of various buildings. An art
 
 ## 5. 사용법
 
-추후 추가 예정
+배포 이후 추가 예정
 <br/>
 
 ## 6. 상세 기능
-<br/>
+[<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white">](https://www.figma.com/file/8diQISW7sASCoCX9au06pY/Untitled?node-id=0%3A1&t=eLfRtNymkIzxVkie-1)
+
+위 아이콘을 눌러 Figma 페이지로 이동하실 수 있습니다.
+
+<img src="img/1.png">
+<img src="img/2.png">
 
 ## 7. Document
+**중간 발표**
+- [중간보고서](https://drive.google.com/file/d/1AJvlI3NF3VdvhCjl1MGUeuisq3TVIt9F/view?usp=share_link)
+- [중간발표자료](https://drive.google.com/file/d/10hzdsp8c0jxI6BGmewgYfPSNsfWUuoh4/view?usp=share_link)
