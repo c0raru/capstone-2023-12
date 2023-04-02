@@ -1,6 +1,27 @@
 팀페이지 주소 : 2023년 12조 https://kookmin-sw.github.io/capstone-2023-12
 
-<img alt="main" src="img/Copyc.png" width=400>
+<div align=center>   
+    <img alt="main" src="img/Copyc.png" width=400>
+</div>
+    
+<div align=center>
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black">
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
+    <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black">
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white">
+    <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
+    <img src="https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=Yarn&logoColor=white">
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
+</div>
+
+<div align=center>
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
+    <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=Django&logoColor=white">
+    <img src="https://img.shields.io/badge/Rest-A30200?style=for-the-badge&logo=&logoColor=white">
+    <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=AmazonAWS&logoColor=white">
+    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
+</div>
 
 ## 목차
 
@@ -9,6 +30,8 @@
 3. [소개 영상](#-소개-영상)
 4. [팀 소개](#-팀-소개)
 5. [사용법](#-사용)
+6. [상세 기능](#-상세-기능)
+7. [Document](#-Document)
 
 ## 1. 프로젝트 소개
 
@@ -16,7 +39,8 @@
 
 <img src="img/MainPage.png" width=250> <img src="img/InPage.png" width=250>
 
-- 웹툰 배경 드로잉(트레이싱)을 위한 저작권 없는 이미지 공유 모바일 플랫폼
+- 웹툰 작가들을 위한 저작권 없는 이미지 공유 모바일 플랫폼
+- 저작권 허용, 상업적 이용 OK
 <br/></br>
 
 웹툰 이용자 1억 8000만 시대.
@@ -24,7 +48,7 @@
 많은 작가들은 배경을 그릴 때 실제 사진을 대고 따라 그리는 '트레이싱' 기법을 사용한다.
 그런데 인터넷 속 수많은 사진들, 따라 그리기만 해도 '표절'이란다.
 
-우리는 바쁜 마감 일정 속에서도 어쩔 수 없이 직접 사진을 찍으러 나가야만 하는 작가들의 시간을 단축하고자 한다.
+우리는 바쁜 마감 일정 속에서도 어쩔 수 없이 직접 사진을 찍으러 나가야만 하는 작가들의 노동 시간을 단축하고자 한다.
 우리가 함께 만들어나갈 Copyc에서는 누구나 상업용으로 쓸 수 있는 직접 찍은 사진들을 공유한다.
 항상 우리 주변에 있지만 사진으로는 잘 찍지 않는 길거리, 강의실, 영화관 사진 모두 웹툰 작가들에게는 소중한 자원이다.
 
@@ -42,6 +66,16 @@ Copyc에서 나누게 될 사진들은 누군가에게는 쓸모 없을, 잘 찍
 <!--프로젝트 소개하는 영상을 추가하세요 -->
 
 ## 2. Abstract
+
+**Copyc (Copyright + Picture)**
+- A mobile platform for sharing copyright-free images for webtoon artists that allows for commercial use.
+<br/></br>
+
+In the age of 180 million webtoon users, we have focused on improving the working environment of webtoon artists. Many artists use the 'tracing' technique, where they draw backgrounds by tracing real photos. However, with countless photos available on the internet, simply tracing can lead to accusations of plagiarism.
+
+We aim to reduce the time that busy artists spend taking photos themselves. With Copyc, which we will create together, anyone can share photos they have taken for commercial use. Street scenes, classrooms, and movie theaters that are always around us, but not often photographed, are all valuable resources for webtoon artists.
+
+An artist living in Seoul will share the appearance of various buildings. An artist living in front of Haeundae Beach will share pictures of the beach. An artist living in Jeju Island will share the beautiful scenery of Jeju Island. The photos shared on Copyc may be useless or poorly taken to some people, but they will be valuable resources for webtoon artists.
 
 ## 3. 소개 영상
 [Figma](https://www.figma.com/file/8diQISW7sASCoCX9au06pY/Untitled?node-id=0%3A1&t=eLfRtNymkIzxVkie-1)
@@ -67,3 +101,7 @@ Copyc에서 나누게 될 사진들은 누군가에게는 쓸모 없을, 잘 찍
 ## 5. 사용법
 
 추후 추가 예정
+
+## 6. 상세 기능
+
+## 7. Document
