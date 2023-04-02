@@ -83,9 +83,7 @@ An artist living in Seoul will share the appearance of various buildings. An art
 
 시연 영상에서는 **Copyc**에서 제공될 기능들을 미리 확인하실 수 있습니다.
 
-[<img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=YouTube&logoColor=white">](https://youtu.be/vuvmn3MwAls)
-
-위 아이콘을 클릭해 YouTube 시연 영상 페이지로 이동하실 수 있습니다.
+[![Video Label](http://img.youtube.com/vi/vuvmn3MwAls/0.jpg)](https://youtu.be/vuvmn3MwAls)
 
 ## 4. 팀 소개
 
