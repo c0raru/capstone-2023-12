@@ -26,12 +26,12 @@
 ## 목차
 
 1. [프로젝트 소개](#1.-프로젝트-소개)
-2. [Abstract](#2.-Abstract)
+2. [Abstract](#2.-abstract)
 3. [소개 영상](#3.-소개-영상)
 4. [팀 소개](#4.-팀-소개)
 5. [사용법](#5.-사용법)
 6. [상세 기능](#6.-상세-기능)
-7. [Document](#7.-Document)
+7. [Document](#7.-document)
 <br/>
 
 ## 1. 프로젝트 소개
@@ -109,7 +109,7 @@ An artist living in Seoul will share the appearance of various buildings. An art
 
 ## 5. 사용법
 
-배포 이후 추가 예정
+최종 배포 이후 추가 예정
 <br/>
 
 ## 6. 상세 기능
