@@ -50,7 +50,7 @@ Copyc에서 나누게 될 사진들은 누군가에게는 쓸모 없을, 잘 찍
 - 정현서
 
 ```
-* 학: ****1693
+* 학번: ****1693
 * Role: Team Leader, FrontEnd
 * E-mail: coraru@kookmin.ac.kr
 ```
