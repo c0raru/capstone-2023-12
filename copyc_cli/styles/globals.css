@@ -1,0 +1,11 @@
+body {
+    font-family: Noto Sans KR;
+}
+
+* {
+    line-height: 1em;
+}
+
+a {
+    color: #7A60FF !important;
+}
