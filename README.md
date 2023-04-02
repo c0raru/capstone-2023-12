@@ -1,6 +1,6 @@
 팀페이지 주소 : 2023년 12조 https://kookmin-sw.github.io/capstone-2023-12
 
-<img alt="main" src="img/copyc.jpg">
+<img alt="main" src="img/copyc.jpg" width=400>
 
 ## 목차
 
@@ -19,7 +19,7 @@
 - 서비스 이용 대상자
     - 웹툰 작가와 지망생, 그 외 일러스트레이터 등 저작권에서 자유로운 사진을 사용하고 싶은 누구나
 
-<img src="img/MainPage.png"> <img src="img/InPage.png">
+<img src="img/MainPage.png" width=200> <img src="img/InPage.png" width=200>
 
 <!--###  소개 영상 -->
 
