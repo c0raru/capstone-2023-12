@@ -31,10 +31,22 @@
 
 ## 4. 팀 소개
 
-정현서 (****1693) 프론트엔드 개발
+- 정현서
 
-임예도 (****1682) 백엔드 개발
+```
+* 학번: ****1693
+* Role: Team Leader, FrontEnd
+* E-mail: coraru@kookmin.ac.kr
+```
+
+- 임예도
+
+```
+* 학번: ****1682
+* Role: BackEnd, Deployment
+* E-mail: ydim@kookmin.ac.kr
+```
 
 ## 5. 사용법
 
-추후 가 예정
+추후 추가 예정
