@@ -100,7 +100,7 @@ An artist living in Seoul will share the appearance of various buildings. An art
 
 ```
 * 학번: ****1682
-* Role: BackEnd, Deployment
+* Role: BackEnd, Infra
 * E-mail: ydim@kookmin.ac.kr
 ```
 <br/>
