@@ -39,10 +39,9 @@
 **Copyc**
 > [카픽] : Copyright + Picture
 > 
-<img src="img/MainPage.png" width=250> <img src="img/InPage.png" width=250>
-
-- 웹툰 작가들을 위한 저작권 없는 이미지 공유 모바일 플랫폼
-- 저작권 허용, 상업적 이용 OK
+> <img src="img/MainPage.png" width=250> <img src="img/InPage.png" width=250>
+> - 웹툰 작가들을 위한 저작권 없는 이미지 공유 모바일 플랫폼
+> - 저작권 허용, 상업적 이용 OK
 
 
 웹툰 이용자 1억 8000만 시대.
@@ -68,7 +67,7 @@ Copyc에서 나누게 될 사진들은 누군가에게는 쓸모 없을, 잘 찍
 
 **Copyc**
 > Copyright + Picture
-- A mobile platform for sharing copyright-free images for webtoon artists that allows for commercial use.
+> - A mobile platform for sharing copyright-free images for webtoon artists that allows for commercial use.
 <br/>
 
 In the age of 180 million webtoon users, we have focused on improving the working environment of webtoon artists. Many artists use the 'tracing' technique, where they draw backgrounds by tracing real photos. However, with countless photos available on the internet, simply tracing can lead to accusations of plagiarism.
@@ -113,12 +112,12 @@ An artist living in Seoul will share the appearance of various buildings. An art
 ## 6. 상세 기능
 [<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white">](https://www.figma.com/file/8diQISW7sASCoCX9au06pY/Untitled?node-id=0%3A1&t=eLfRtNymkIzxVkie-1)
 
-위 아이콘을 눌러 Figma 페이지로 이동하실 수 있습니다.
+위 아이콘을 누르면 Figma 페이지로 이동합니다.
 
 <img src="img/1.png">
 <img src="img/2.png">
 
 ## 7. Document
 **중간 발표**
-- [중간보고서](https://drive.google.com/file/d/12mVLmLgrs-cM3martpn90DJj2BWDxbky/view?usp=share_link)
-- [중간발표자료](https://drive.google.com/file/d/1F9brloHz6PgaKsG11iMcyqmsTgwyOUM1/view?usp=share_link)
+- [중간보고서 PDF](https://drive.google.com/file/d/12mVLmLgrs-cM3martpn90DJj2BWDxbky/view?usp=share_link)
+- [중간발표자료 PDF](https://drive.google.com/file/d/1F9brloHz6PgaKsG11iMcyqmsTgwyOUM1/view?usp=share_link)
