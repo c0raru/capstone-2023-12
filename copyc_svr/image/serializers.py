@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from image.models import Category, Image, Like, ViewHistory
+from image.models import Category, Image, ImageDetail, Like, ViewHistory
 
 class CategorySerializer(ModelSerializer):
 
@@ -15,6 +15,11 @@ class ProductSerializer(ModelSerializer):
         fields = '__all__'
 
 
+class ImageDetailSerializer(ModelSerializer):
+
+    class Meta:
+        model = ImageDetail
+        fields = '__all__'
 class LikeSerializer(ModelSerializer):
 
     class Meta:
