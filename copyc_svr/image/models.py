@@ -19,7 +19,7 @@ class Image(models.Model):
     category = models.ForeignKey(to=Category, verbose_name="카테고리", null=True, on_delete=models.SET_NULL)
     name = models.CharField("이름", max_length=100)
     thumbnail = models.FileField("썸네일", upload_to='uploads/%Y%m%d/')
-    contents = RichTextField("내용")
+    # contents = RichTextField("내용")
     date = models.DateTimeField("등록일", auto_now_add=True)
 
     class Meta:
@@ -27,12 +27,15 @@ class Image(models.Model):
     def __str__(self):
         return self.name
 
+class ImageDetail(models.Model):
+    product = models.ForeignKey(to=Image, verbose_name="이미지", on_delete=models.CASCADE)
+    detail = models.FileField("세부 이미지", upload_to='uploads/%Y%m%d/')
 class Like(models.Model):
     """
     이 모델은 사용자들이 하트를 눌러 찜한 이미지를 의미합니다.
     """
-    user = models.ForeignKey(to=get_user_model(), verbose_name="사용자", on_delete=models.CASCADE)
-    product = models.ForeignKey(to=Product, verbose_name="이미지", on_delete=models.CASCADE)
+#    user = models.ForeignKey(to=get_user_model(), verbose_name="사용자", on_delete=models.CASCADE)
+    image = models.ForeignKey(to=Image, verbose_name="이미지", on_delete=models.CASCADE)
     date = models.DateTimeField("좋아요 등록일", auto_now_add=True)
 
     class Meta:
@@ -44,8 +47,8 @@ class ViewHistory(models.Model):
     """
     게시물 열람 로그입니다.
     """
-    user = models.ForeignKey(to=get_user_model(), verbose_name="사용자", null=True, on_delete=models.SET_NULL)
-    product = models.ForeignKey(to=Product, verbose_name="이미지", null=True, on_delete=models.SET_NULL)
+#    user = models.ForeignKey(to=get_user_model(), verbose_name="사용자", null=True, on_delete=models.SET_NULL)
+    image = models.ForeignKey(to=Image, verbose_name="이미지", null=True, on_delete=models.SET_NULL)
     date = models.DateTimeField("열람 일시", auto_now_add=True)
 
     class Meta:
