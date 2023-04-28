@@ -11,7 +11,7 @@ import TitleSubtitleLayout from 'src/layouts/TitleSubtitleLayout'
 export default function Signin() {
   const router = useRouter()
   return (
-    <TitleSubtitleLayout title="로그인" subtitle="저작권 프리 사진 공유 플랫폼 카픽">
+    <TitleSubtitleLayout title="로그인" subtitle="카픽을 통해 사진을 공유해보세요">
       <Input placeholder="아이디" />
       <Input placeholder="비밀번호" />
       <Button>로그인</Button>
