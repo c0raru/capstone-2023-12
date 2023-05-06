@@ -13,10 +13,9 @@ is_phone = re.compile('\d{3}\-?\d{3,4}\-?\d{4}')
 is_url = re.compile(r'[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?')
 
 class UserSerializer(ModelSerializer):
-    class UserSerializer(ModelSerializer):
-        password = SerializerMethodField()
-        def get_password(self, obj):
-            return ""
+    password = SerializerMethodField()
+    def get_password(self, obj):
+        return ""
     class Meta:
         model = models.User
         fields = "__all__"

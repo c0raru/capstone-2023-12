@@ -8,7 +8,9 @@ class NoticeSerializer(ModelSerializer):
         model = Notice
         fields = ['id', 'title', 'fixed', 'date']
 
+
 class NoticeDetailSerializer(ModelSerializer):
+
     class Meta:
         model = Notice
         fields = ['id', 'title', 'contents', 'fixed', 'date']

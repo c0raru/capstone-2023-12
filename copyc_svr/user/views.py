@@ -5,31 +5,22 @@ from rest_framework import authentication, permissions, serializers
 from django.contrib.auth import authenticate, get_user_model, login, logout
 from fileserver.models import File
 
-import random
-from user.serializers import UserSerializer, ArtistCreateValidate
-from .models import EmailAuth, User, UserSession, Artist
-import datetime
+from .models import User
 import re
-import secrets
 from django.contrib.auth import user_logged_in
 from django.dispatch.dispatcher import receiver
-from django.contrib.sessions.models import Session
 import dateutil.parser
-from serializers import UserSerializer
+from .serializers import UserSerializer
 
-import smtplib
-from email.mime.text import MIMEText
 
 is_phone = re.compile('\d{3}\-?\d{3,4}\-?\d{4}')
 is_email = re.compile(r'\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b')
-
 
 class SocialConnect(APIView):
     def get(self, request):
         user = request.user
         provider = request.GET.get("provider", "")
         code = request.GET.get("code", "")
-
 
 class UserAPI(APIView):
     permission_classes = [permissions.AllowAny]
@@ -50,15 +41,15 @@ class UserAPI(APIView):
         return JsonResponse(UserSerializer(user).data)
 
     def put(self, request, *args, **kwargs):
-        email = request.data.get("email", None)
-        password = request.data.get("password", None)
-        nickname = request.data.get("nickname", None)
-        fullname = request.data.get("fullname", None)
-        gender = request.data.get("gender", None)
-        birthday = request.data.get("birthday", None)
-        code = request.data.get("code", None)
+        print(request.data)
+        username  = request.data.get("username", None)
+        email     = request.data.get("email"    , None)
+        password  = request.data.get("password" , None)
+        fullname  = request.data.get("fullname", None)
+        gender    = request.data.get("gender", None) 
+        birthday  = request.data.get("birthday", None)
 
-        birthday = dateutil.parser.parse(birthday)
+        birthday  = dateutil.parser.parse(birthday)
 
         if not email:
             return JsonResponse({
@@ -70,54 +61,57 @@ class UserAPI(APIView):
                 "user": ["이메일 형식이 맞지 않습니다."]
             }, status=400)
 
+        if User.objects.filter(username=username).exists():
+            return JsonResponse({
+                "user": ["이미 존재하는 사용자이름입니다."]
+            }, status=400)
+        
         if User.objects.filter(email=email).exists():
             return JsonResponse({
                 "user": ["이미 존재하는 이메일입니다."]
             }, status=400)
-
+        
         if not password:
             return JsonResponse({
                 "user": ["비밀번호를 입력해주세요."]
             }, status=400)
-
+        
         if not fullname:
             return JsonResponse({
                 "user": ["실명을 입력해주세요."]
             }, status=400)
-
+        
         if not birthday:
             return JsonResponse({
                 "user": ["생년월일을 입력해주세요."]
             }, status=400)
-
+        
         if gender not in ["M", "F"]:
             return JsonResponse({
                 "user": ["올바른 성별을 입력해주세요."]
             }, status=400)
 
-        try:
-            ea = EmailAuth.objects.get(email=email, code=code)
-            ea.delete()
-        except EmailAuth.DoesNotExist:
-            return JsonResponse({
-                "email": ["이메일 인증번호가 올바르지 않습니다."]
-            }, status=400)
+        terms = request.data.get("terms", [])
 
         user = User()
-        user.email = email
+        user.email    = email
         user.fullname = fullname
-        user.nickname = nickname
-        user.youtube = youtube
+        user.username = username
+        user.birthday = birthday
+        user.gender = gender
+        if type(terms) == list and len(terms) == 4:
+            user.agree_marketing = terms[2].get("is_active", False)
+            user.agree_event = terms[3].get("is_active", False)
         user.set_password(password)
         user.save()
 
-        user = authenticate(request, email=email, password=password)
-        login(request, user)
+        # user = authenticate(request, email=email, password=password)
+        # login(request, user)
 
-        return JsonResponse(**NORMAL)
+        return JsonResponse({})
 
     def post(self, request):
-        username = request.data.get("username", "")
+        username    = request.data.get("username", "")
         password = request.data.get("password", "")
 
         user = authenticate(request, username=username, password=password)
@@ -126,9 +120,9 @@ class UserAPI(APIView):
             return JsonResponse({})
 
         return JsonResponse({
-            "user": ["아이디 또는 비밀번호가 올바르지 않습니다."]
+            "user": ["아이디 또는 비밀번호가 올바르지않습니다."]
         }, status=400)
-
+    
     def delete(self, request):
         logout(request)
         return JsonResponse({})
@@ -136,11 +130,9 @@ class UserAPI(APIView):
 
 class FindEmail(APIView):
     permission_classes = [permissions.IsAuthenticated]
-
     def post(self, request):
         return JsonResponse(**NORMAL)
-        # TODO 아이디 찾기 기능 필요
-
+        #TODO 아이디 찾기 기능 필요
 
 class CheckEmail(APIView):
     def post(self, request):
@@ -150,17 +142,15 @@ class CheckEmail(APIView):
             "is_exists": is_exists
         })
 
-
 class ChangePassword(APIView):
     '''
     POST /user/password
     {
     "password": "현재비번",
     "password_new": "새로운 비번"
-    }
+    } 
     '''
     permission_classes = [permissions.IsAuthenticated]
-
     def post(self, request):
         password = request.data.get("password", "").strip()
         password_new = request.data.get("password_new", "")

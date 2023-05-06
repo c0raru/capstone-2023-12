@@ -12,5 +12,6 @@ class Notice(models.Model):
 
     class Meta:
         verbose_name_plural = '공지사항'
+
     def __str__(self):
         return self.title
