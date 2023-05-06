@@ -8,19 +8,19 @@ from fileserver.models import File
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password=None):
-        if not email:
+    def create_user(self, username, password=None):
+        if not username:
             raise ValueError('Users must have an email')
         user = self.model(
-            email=email,
+            username=username,
         )
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password):
+    def create_superuser(self, username, password):
         user = self.create_user(
-            email=email,
+            username=username,
             password=password
         )
         user.is_admin = True
@@ -35,6 +35,9 @@ class User(AbstractBaseUser):
 
     is_admin = models.BooleanField("어드민", default=False)
 
+    agree_marketing = models.BooleanField("마케팅 활용", default=False)
+    agree_event = models.BooleanField("플러스친구 추가 후 이벤트 소식받기", default=False)
+    
     objects = UserManager()
 
     USERNAME_FIELD = 'username'
@@ -52,7 +55,6 @@ class User(AbstractBaseUser):
     @property
     def is_staff(self):
         return self.is_admin
-
 
 class UserSession(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
