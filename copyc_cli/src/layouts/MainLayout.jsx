@@ -229,22 +229,19 @@ export default function MainLayout(props) {
             }
             <div className="splitButton">
                 <div onClick={() => router.push("/")}>홈</div>
-                <div onClick={() => router.push("/user/like")}>선호 스타일</div>
+                <div onClick={() => router.push("/user/like")}>찜</div>
             </div>
             <div className="menu">
                 <div className="title">About</div>
-                <div onClick={() => router.push("/pages/notice")}>회사소개</div>
+                <div onClick={() => router.push("/pages/notice")}>COPYC</div>
                 <div onClick={() => router.push("/notice")}>공지사항</div>
 
                 <div className="title">My page</div>
                 <div onClick={() => router.push("/user/history")}>구매내역</div>
-                <div onClick={() => router.push("/styles/history")}>스타일 추천 History</div>
-                <div onClick={() => router.push("/user/like")}>선호 스타일</div>
+                <div onClick={() => router.push("/user/like")}>찜</div>
                 <div onClick={() => router.push("/contact")}>문의하기</div>
                 <div onClick={() => router.push("/user/password/reset")}>비밀번호 재설정</div>
 
-                <div className="title">사이즈 추천</div>
-                <div onClick={() => router.push("/styles/")}>사이즈 추천</div>
             </div>
         </MenuBackground>
       </Menu>
