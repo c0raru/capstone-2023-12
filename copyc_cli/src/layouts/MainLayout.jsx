@@ -272,7 +272,7 @@ export default function MainLayout(props) {
                 <div className="category">{props.category}</div>
               ) : (
                 <Link href="/">
-                  <img src="/next/images/logo.svg" />
+                  <img src="/public/logo.ico" />
                 </Link>
               )}
             </div>
