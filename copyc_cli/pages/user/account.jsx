@@ -1,8 +1,6 @@
-/*
-  @page        : /user/account
-  @description : 계정 정보를 보여주는 페이지
-*/
+
 import MainLayout from 'src/layouts/MainLayout'
+import OnlyUserLayout from 'src/layouts/OnlyUserLayout'
 import styled from 'styled-components'
 
 const Table = styled.table`
@@ -32,6 +30,7 @@ const Table = styled.table`
 
 export default function Best() {
   return (
+    <OnlyUserLayout>
     <MainLayout category="계정 정보">
       <section>
         <Table>
@@ -64,5 +63,6 @@ export default function Best() {
         </Table>
       </section>
     </MainLayout>
+    </OnlyUserLayout>
   )
 }

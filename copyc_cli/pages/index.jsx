@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Button, Grid } from "semantic-ui-react";
+import { Button, Grid, Icon } from "semantic-ui-react";
 import { LinkButton } from "src/components/button";
 import { CardItems } from "src/components/card";
 import { Card } from "src/components/card";
@@ -72,8 +72,9 @@ export default function Home() {
             <CardItems items={historyItems}/>
           </>
         ) : (
-          <Link href = "/styles">
+          <Link href = "/upload">
         <LinkButton style={{marginTop: 24}}>
+          <Icon name="picture" />
           이미지 업로드 
         </LinkButton>
         </Link>

@@ -1,5 +1,1 @@
-from django.apps import Appconfig
-
-class NoticeConfig(Appconfig):
-    name = 'notice'
-    verbose_name = "공지사항"
+default_app_config = 'notice.apps.NoticeConfig'
