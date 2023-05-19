@@ -13,6 +13,7 @@ urlpatterns = [
     path('api/notice/', include('notice.urls')),
     path('api/contact/', include('contact.urls')),
     path('api/style/', include('style.urls')),
+    path('api/fileserver/', include('fileserver.urls')),
 ]
 
 

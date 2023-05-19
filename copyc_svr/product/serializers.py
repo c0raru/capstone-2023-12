@@ -21,6 +21,9 @@ class ProductSerializer(ModelSerializer):
 
     brand = BrandSerializer()
     category = CategorySerializer()
+    thumbnail = SerializerMethodField()
+    
+    # TODO: thumbnail 완료하기
 
     class Meta:
         model = Product

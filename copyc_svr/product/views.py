@@ -38,6 +38,22 @@ class ProductViewSet(ViewSet):
         serializer = ProductSerializer(results, many=True)
         return paginator.get_paginated_response(serializer.data)
 
+    def create(self, request):
+        imageName = request.data.get("imageName", "")
+        imageDescription = request.data.get("imageDescription", "")
+        category = request.data.get("category", -1)
+        attached = request.data.get("attached", [])
+        category_obj = Category.objects.get(id=category)
+        product = Product(category=category_obj, brand=None, name=imageName, contents=imageDescription, price=500*len(attached))
+        product.save()
+        
+        for attach in attached:
+            image = ProductImage.objects.get(code=attach)
+            image.product = product
+            image.save()
+
+        return JsonResponse({"id": product.id}, safe=False)
+
     def retrieve(self, request, pk=None):
         queryset = Product.objects.all()
         item = get_object_or_404(queryset, pk=pk)
