@@ -49,8 +49,8 @@ export default function SigninComplete() {
         </div>
       </Page>
       <div className="bottom">
-        <Link href="/user/signup/complete">
-          <Button>회원가입 완료</Button>
+        <Link href="/">
+          <Button>메인으로</Button>
         </Link>
       </div>
     </MainLayout>

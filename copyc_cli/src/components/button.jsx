@@ -13,6 +13,24 @@ export const Button = styled.button`
     text-align: center;
     color: #FFFFFF;
     margin: 8px 0px;
+    ${props => {
+        if(props.inversed) {
+            return css`
+                color: #000;
+                background: #FFFFFF;
+                border: 1px solid #E0E0E0;
+                box-sizing: border-box;
+                border-radius: 8px;
+            `
+        }
+        if(props.point) {
+            return css`
+                background: #7A60FF;
+            `
+        }
+        return css`
+        `
+    }}
 `
 
 const StyledSplitTextButton = styled.div`
@@ -25,13 +43,28 @@ const StyledSplitTextButton = styled.div`
         height: 10px;
         width: 1px;
         margin: 0px 5px;
-        background-color: #BDBDBD;
+        background-color: #727272;
     }
     >div:last-child::after {
         display: none;
     }
 `
 
+export const SplitTextButton = ({items,}) => {
+    return (
+        <StyledSplitTextButton>
+            {
+                items.map(item => {
+                    return (
+                        <div onClick={item.onClick}>
+                            {item.name}
+                        </div>
+                    )
+                })
+            }
+        </StyledSplitTextButton>
+    )
+}
 
 export const CheckButton = styled.button`
     width: 100%;
@@ -66,7 +99,7 @@ export const CheckButtonGroup = styled.div`
 `
 
 const StyledLinkButton = styled.button`
-    background: #404040;
+    background: #727272;
     border-radius: 12px;
     height: 72px;
     color: #fff;

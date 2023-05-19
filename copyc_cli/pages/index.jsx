@@ -48,46 +48,56 @@ export default function Home() {
 
   useEffect(() => {
     const page = 1
-
-    product?.search(page)
+    product.search(page)
     .then(({data}) => {
       setBestItems(data.results)
       setPage(page + 1)
     })
-   }, [product])
+  }, [])
 
   const router = useRouter()
+
   return (
     <MainLayout>
       <section>
-
         <ImageBannerContents>
-          <div>NEW</div>
-          <div>바다가 보이는 카페 이미지 (Ocean View Cafe Image)</div>
+          <div><span>Best</span></div>
+          <div><span>copyc</span></div>
+          <div><span>1coin</span></div>
         </ImageBannerContents>
 
+        {/* 스타일 추천 여부에 따른 기록 및 추천 배너 출현 여부 분기 */}
         {historyItems.length ? (
           <>
             <LabelMenu title="History" subtitle="내역보기" url="/styles/history" />
             <CardItems items={historyItems}/>
           </>
         ) : (
+<<<<<<< HEAD
           <Link href = "/upload">
         <LinkButton style={{marginTop: 24}}>
           <Icon name="picture" />
           이미지 업로드 
         </LinkButton>
         </Link>
+=======
+          <Link href="/upload/">
+            <LinkButton style={{ marginTop: 24 }}>
+              업로드하기
+            </LinkButton>
+          </Link>
+>>>>>>> origin/cli0
         )}
 
-      
-      <LabelMenu title="Best Items" subtitle="전체보기"  url="/best" /> 
-      <CardItems items={bestItems}/>
-    
+        <LabelMenu title="Best Items" subtitle="전체보기" url="/best" />
+        <CardItems items={bestItems}/>
+
       </section>
-      
-      <footer>
-      </footer>
+     {/* <HelpDesk>
+        <div>도움이 필요하신가요?</div>
+        <Button color="blue" onClick={() => router.push("/contact")}>1:1 문의하기</Button>
+      </HelpDesk>
+        <SizeRecommendButton onClick={() => router.push("/styles/")}>사이즈 추천</SizeRecommendButton> */}
     </MainLayout>
-  )
+  );
 }
