@@ -80,7 +80,7 @@ const Categories = styled.div`
   >div {
     font-size: 20px;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 20px;
     color: #292E33;
     text-align: left;
@@ -213,7 +213,7 @@ export default function Upload() {
               }
               </Categories>
               <br/>
-              <Button fluid color="black" style={{fontSize: 20, height: 80}} onClick={nextHandler}>다음</Button>
+              <Button fluid color="grey" style={{fontSize: 20, height: 80 }} onClick={nextHandler}>다음</Button>
             </>
           )
         }
@@ -239,7 +239,7 @@ export default function Upload() {
                 </div>
               </div>
               <br/>
-              <Button fluid color="black" style={{fontSize: 20, height: 80}} onClick={nextHandler}>다음</Button>
+              <Button fluid color="grey" style={{fontSize: 20, height: 80}} onClick={nextHandler}>다음</Button>
             </>
           )
         }
@@ -267,7 +267,7 @@ export default function Upload() {
               </Grid>
               <br/>
               <br/>
-              <Button fluid color="black" style={{fontSize: 20, height: 80}} onClick={submitHandler}>업로드 하기</Button>
+              <Button fluid color="grey" style={{fontSize: 20, height: 80}} onClick={submitHandler}>업로드 하기</Button>
             </div>
           )
         }

@@ -1,3 +1,7 @@
+/*
+  @page        : /user/like
+  @description : 선호 스타일
+*/
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Grid } from "semantic-ui-react";
@@ -17,12 +21,12 @@ export default function UserLike() {
   }, [])
   return (
     <OnlyUserLayout>
-    <MainLayout category="찜">
+    <MainLayout category="찜 내역">
       <section>
         <CardItems items={items}/>
         {
           items.length === 0 && (
-            <WarningText>찜한 사진이 없습니다.</WarningText>
+            <WarningText>선호하는 상품이 없습니다.</WarningText>
           )
         }
       </section>

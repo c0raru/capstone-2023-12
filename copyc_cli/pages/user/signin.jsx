@@ -31,7 +31,7 @@ export default function Signin() {
   return (
     <TitleSubtitleLayout
       title="로그인"
-      subtitle="저작권 프리 사진공유 플랫폼 카픽"
+      subtitle="저작권 프리 사진공유 사이트 카픽"
     >
       <Input
         placeholder="아이디"
@@ -58,7 +58,7 @@ export default function Signin() {
         ]}
       />
       <Center>
-        저작권 프리 사진공유 플랫폼 카픽 {" "}
+        카픽에서 사진공유를 해보세요{" "}
         <Link href="/user/signup">회원가입</Link>
       </Center>
     </TitleSubtitleLayout>

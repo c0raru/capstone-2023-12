@@ -104,7 +104,7 @@ export const Card = (props) => {
         <span>{props.category.name}</span>
       </div>
       <div className="price">
-        {parseInt(props.price).toLocaleString()}원
+        <NumberFormat value={props.price} displayType={'text'} thousandSeparator={true} />원
       </div>
     </StyledCard>
   );
@@ -112,7 +112,6 @@ export const Card = (props) => {
 
 export const CardItems = (props) => {
   const items = props.items || [];
-  console.log(items)
   return (
     <Grid columns={2}>
       {items.map((item) => {

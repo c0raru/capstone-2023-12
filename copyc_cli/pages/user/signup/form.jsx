@@ -50,7 +50,7 @@ export default function SigninForm() {
       return
     }
     if(form.password !== form.password_check) {
-      toast.error("비밀번호를 정확하게 입력해주세요.")
+      toast.error("두 비밀번호가 서로 다릅니다.")
       return
     }
     const terms = getCookie("terms")
@@ -74,6 +74,7 @@ export default function SigninForm() {
         <Label>이메일</Label>
         <Input placeholder="이메일" value={form.email} onChange={e => update("email", e.target.value)} />
         <Warning>
+          비밀번호 재설정 링크, 이벤트, 쿠폰에 대한 안내가 이메일로 제공됩니다.
           본인의 이메일을 정확하게 입력해주세요
           <br/>
           <div className="red">(가입 후 변경 불가능)</div>

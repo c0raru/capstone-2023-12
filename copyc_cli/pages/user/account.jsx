@@ -1,4 +1,7 @@
-
+/*
+  @page        : /user/account
+  @description : 계정 정보를 보여주는 페이지
+*/
 import MainLayout from 'src/layouts/MainLayout'
 import OnlyUserLayout from 'src/layouts/OnlyUserLayout'
 import styled from 'styled-components'
