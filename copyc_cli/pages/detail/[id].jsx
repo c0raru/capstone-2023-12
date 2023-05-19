@@ -187,7 +187,7 @@ export default function ProductDetail() {
   const product = useProduct();
   const router = useRouter();
 
-  const [form, setForm] = useState(null);
+  const [form, setForm] = useState({});
   const [isLike, setIsLike] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState({});
@@ -266,7 +266,10 @@ export default function ProductDetail() {
     return <></>;
   }
 
-  const images = [form.thumbnail, ...form.images.map((item) => item.image)];
+  let images = [form.thumbnail,] // ? ...form?.images?.map((item) => item.image)];
+  if(form?.images && form?.images?.length > 0) {
+    images = images.concat(form.images);
+  }
   const count_items = Object.values(cart)
     .map((v) => v.count)
     .reduce((x, y) => {
@@ -285,18 +288,13 @@ export default function ProductDetail() {
             );
           })}
         </Slider>
-        <Header>
+        <Header style={{marginTop: 25}}>
           <div className="category">
-            {form.brand.name} | {form.category.name}
+            {form?.brand?.name} | {form?.category?.name}
           </div>
           <div className="title">{form.name}</div>
           <div className="price">
-            <NumberFormat
-              value={form.price}
-              displayType={"text"}
-              thousandSeparator={true}
-            />
-            coin
+            {parseInt(form.price).toLocaleString()} COIN
           </div>
         </Header>
         <Section>
