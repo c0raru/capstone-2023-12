@@ -368,12 +368,8 @@ export default function ProductDetail() {
                               />
                             </div>
                             <div className="price">
-                              <NumberFormat
-                                value={form.price * cart[key].count}
-                                displayType={"text"}
-                                thousandSeparator={true}
-                              />
-                              coin
+                              {parseInt(form.price * cart[key].count).toLocaleString()}
+                              COIN
                             </div>
                           </div>
                         </div>
