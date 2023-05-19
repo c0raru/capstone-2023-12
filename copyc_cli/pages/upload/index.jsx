@@ -6,7 +6,11 @@ import {useDropzone} from 'react-dropzone'
 import step_1 from "./step_1.svg";
 import step_2 from "./step_2.svg";
 import step_3 from "./step_3.svg";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import axios from "axios";
+import Editor from 'react-pell'
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 const StepImage = styled.img`
   width: 75px;
@@ -80,11 +84,7 @@ const Categories = styled.div`
   >div {
     font-size: 20px;
     font-weight: 400;
-<< HEAD
     font-size: 20px;
-=======
-    font-size: 17px;
->>>>>>> origin/cli0
     line-height: 20px;
     color: #292E33;
     text-align: left;
@@ -138,7 +138,10 @@ const img = {
 
 export default function Upload() {
 
+  const router = useRouter()
+
   const [files, setFiles] = useState([]);
+  const [category, setCategory] = useState(null);
 
   const { getRootProps, getInputProps, open } = useDropzone({
     accept: "image/*",
@@ -168,6 +171,7 @@ export default function Upload() {
   );
 
   const [step, setStep] = useState(0);
+  const [imageDescription, setImageDescription] = useState("");
 
   const subtitles = [
     "등록하실 이미지의 카테고리를 선택해주세요.",
@@ -175,14 +179,48 @@ export default function Upload() {
     "이미지를 업로드해주세요.",
   ]
 
-  const categories = ["숲 / 나무", "바닷가 / 휴양지", "학교", "회사", "인물", "집", "가구", "음식"];
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axios.get("/product/category")
+    .then(({data}) => {
+      setCategories(data)
+    })
+  }, [])
+
 
   const nextHandler = () => {
     setStep(step+1);
   }
 
-  const submitHandler = () => {
-    
+  const selectCategoryHandler = (id) => {
+    setCategory(id)
+    nextHandler()
+  }
+
+  const submitHandler = async () => {
+    if(files.length === 0) {
+      toast.error("이미지를 올려주세요.")
+      return
+    }
+    const attached = []
+    for (let index = 0; index < files.length; index++) {
+      const element = files[index];
+      let formData = new FormData(); // formData 객체를 생성한다.
+      formData.append("file", element)
+      let axiosConfig = { headers: { "Content-Type": "multipart/form-data", } }
+      let response = await axios.put('/fileserver', formData, axiosConfig);
+      console.log(response.data.code)
+      attached.push(response.data.code)
+    }
+    const form = {
+      "imageName": imageName,
+      "imageDescription": imageDescription,
+      "category": category.id,
+      "attached": attached
+    }
+    var res = await axios.post("/product/product", form)
+    router.push("/product/" + res.data.id)
   }
 
   const Textarea = styled.textarea`
@@ -194,6 +232,19 @@ export default function Upload() {
   `
 
   const top_step = [step_1, step_2, step_3];
+
+  const [imageName, setImageName] = useState("")
+
+  const formRef = useRef()
+
+  const formHandler = (e) => {
+    setImageName(formRef.current.imageName.value)
+    setImageDescription(formRef.current.imageDescription.value)
+    nextHandler()
+    e.preventDefault()
+    e.stopPropagation()
+    return false
+  }
 
   return (
     <MainLayout>
@@ -211,40 +262,43 @@ export default function Upload() {
               {
                 categories.map(category => {
                   return (
-                    <div>{category}</div>
+                    <div onClick={() => selectCategoryHandler(category)}>{category.name}</div>
                   )
                 })
               }
               </Categories>
-              <br/>
-              <Button fluid color="grey" style={{fontSize: 20, height: 80 }} onClick={nextHandler}>다음</Button>
             </>
           )
         }
         {
           step === 1 && (
-            <>
+            <form ref={formRef}>
               <div>
                 <CategoryTitle underline>
                   <span>카테고리 선택</span>
-                  <span className="value">(선택한 카테고리)</span>
+                  <span className="value">{category.name}</span>
                 </CategoryTitle>
                 <CategoryTitle>
                   <span>이미지 이름</span>
                 </CategoryTitle>
                 <div>
-                  <Input placeholder="이미지 이름을 입력해주세요." fluid style={{fontSize: 20, marginTop: 5}}/>
+                  <Input
+                    name="imageName" id="imageName" 
+                    placeholder="이미지 이름을 입력해주세요."
+                    fluid
+                    style={{fontSize: 20, marginTop: 5}}
+                  />
                 </div>
                 <CategoryTitle>
                   <span>이미지 정보</span>
                 </CategoryTitle>
                 <div>
-                  <Textarea placeholder="이미지 정보를 입력해주세요."/>
+                  <Textarea placeholder="이미지 정보를 입력해주세요." name="imageDescription" id="imageDescription" />
                 </div>
               </div>
               <br/>
-              <Button fluid color="grey" style={{fontSize: 20, height: 80}} onClick={nextHandler}>다음</Button>
-            </>
+              <Button fluid color="grey" style={{fontSize: 20, height: 80}} onClick={formHandler}>다음</Button>
+            </form>
           )
         }
         {
