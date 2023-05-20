@@ -214,7 +214,10 @@ export default function MainLayout(props) {
                       <div onClick={() => router.push("/user/")} style={{cursor: "pointer"}}><Icon name="user"/></div>
                     </div>
                     <div className="text_buttons">
-                        <div>{user.userinfo.data.email}</div>
+                      <div>{user.userinfo.data.email}</div>
+                    </div>
+                    <div className="text_buttons" style={{marginTop: 5}}>
+                      <div><Icon name="dot circle outline" />COIN&nbsp;&nbsp;&nbsp;&nbsp;{parseInt(user.userinfo.data.coin).toLocaleString()}</div>
                     </div>
                 </div>
               ) : (
@@ -233,18 +236,14 @@ export default function MainLayout(props) {
             </div>
             <div className="menu">
                 <div className="title">About</div>
-                <div onClick={() => router.push("/pages/notice")}>copyc</div>
+                <div onClick={() => router.push("/pages/notice")}>COPYC</div>
                 <div onClick={() => router.push("/notice")}>공지사항</div>
 
                 <div className="title">My page</div>
                 <div onClick={() => router.push("/user/history")}>저장내역</div>
-               {/* <div onClick={() => router.push("/styles/history")}>스타일 추천 History</div> */}
                 <div onClick={() => router.push("/user/like")}>찜내역</div>
                 <div onClick={() => router.push("/contact")}>문의하기</div>
                 <div onClick={() => router.push("/user/password/reset")}>비밀번호 재설정</div>
-
-               {/* <div className="title">사이즈 추천</div>
-                <div onClick={() => router.push("/styles/")}>사이즈 추천</div> */}
             </div>
         </MenuBackground>
       </Menu>
@@ -290,11 +289,6 @@ export default function MainLayout(props) {
                   <Link href="/notice">
                     <div>
                       <Icon name="bell outline" />
-                    </div>
-                  </Link>
-                  <Link href="/shop/cart">
-                    <div>
-                      <Icon name="cart" />
                     </div>
                   </Link>
                 </>

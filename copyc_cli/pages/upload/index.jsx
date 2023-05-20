@@ -1,4 +1,4 @@
-import { Button, Grid, Icon, Input } from "semantic-ui-react";
+import { Button, Dimmer, Grid, Icon, Input, Loader, Segment } from "semantic-ui-react";
 import MainLayout from "src/layouts/MainLayout";
 import styled, { css } from "styled-components";
 import {useDropzone} from 'react-dropzone'
@@ -96,6 +96,10 @@ const Categories = styled.div`
   }
 `
 
+const LoaderBackground = styled.div`
+
+`
+
 const FileUpload = styled.div`
   height: 300px;
   border: 5px dashed #ddd;
@@ -142,6 +146,7 @@ export default function Upload() {
 
   const [files, setFiles] = useState([]);
   const [category, setCategory] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { getRootProps, getInputProps, open } = useDropzone({
     accept: "image/*",
@@ -203,6 +208,7 @@ export default function Upload() {
       toast.error("이미지를 올려주세요.")
       return
     }
+    setIsLoading(true)
     const attached = []
     for (let index = 0; index < files.length; index++) {
       const element = files[index];
@@ -221,6 +227,7 @@ export default function Upload() {
     }
     var res = await axios.post("/product/product", form)
     router.push("/detail/" + res.data.id)
+    setIsLoading(false)
   }
 
   const Textarea = styled.textarea`
@@ -332,6 +339,15 @@ export default function Upload() {
       </Styled>
       <footer>
       </footer>
+      {
+        isLoading && (
+          <LoaderBackground>
+            <Dimmer active inverted>
+              <Loader size='large'>Loading</Loader>
+            </Dimmer>
+          </LoaderBackground>
+        )
+      }
     </MainLayout>
   )
 }

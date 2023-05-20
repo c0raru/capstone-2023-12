@@ -34,11 +34,9 @@ class User(AbstractBaseUser):
     fullname = models.CharField("이름", max_length=100)
 
     is_admin = models.BooleanField("어드민", default=False)
-
-    agree_marketing = models.BooleanField("마케팅 활용", default=False)
-    agree_event = models.BooleanField("플러스친구 추가 후 이벤트 소식받기", default=False)
-    
+   
     objects = UserManager()
+    coin = models.IntegerField("코인", default=1000)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = []

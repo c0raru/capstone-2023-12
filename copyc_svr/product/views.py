@@ -4,6 +4,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from product.serializers import BrandSerializer, CartSerializer, CategorySerializer, LikeListSerializer, ProductDetailSerializer, ProductSerializer, ProductImageSerializer, LikeSerializer, SizeSerializer, ViewHistorySerializer
 from product.models import Brand, Cart, Category, Product, ProductImage, Like, Size, ViewHistory
+from user.models import User as UserModel
 from utils import StandardResultsSetPagination
 from rest_framework.serializers import ValidationError
 from django.db.models import Q
@@ -44,6 +45,9 @@ class ProductViewSet(ViewSet):
         category = request.data.get("category", -1)
         attached = request.data.get("attached", [])
         category_obj = Category.objects.get(id=category)
+        user = UserModel.objects.get(id=request.user.id)
+        user.coin = user.coin + 500*len(attached)
+        user.save()
         product = Product(category=category_obj, brand=None, name=imageName, contents=imageDescription, price=500*len(attached))
         product.save()
         

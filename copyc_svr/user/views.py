@@ -99,9 +99,6 @@ class UserAPI(APIView):
         user.username = username
         user.birthday = birthday
         user.gender = gender
-        if type(terms) == list and len(terms) == 4:
-            user.agree_marketing = terms[2].get("is_active", False)
-            user.agree_event = terms[3].get("is_active", False)
         user.set_password(password)
         user.save()
 

@@ -114,7 +114,7 @@ export default function UserMypage() {
     <MainLayout category="마이페이지" white>
       <Profile>
         <div className='username'>{info.fullname} 님</div>
-        <div className='email'>{info.email}</div>
+        <div className='email'>{info.email} {info.coin}COIN</div>
       </Profile>
       <section>
         <SplitView>
