@@ -42,6 +42,8 @@ class ProductViewSet(ViewSet):
                 Q(brand__name=query) | 
                 Q(name__contains=query)
             )
+           
+        queryset = queryset.order_by("-pk")
         results = paginator.paginate_queryset(queryset[:limit], request)
         serializer = ProductSerializer(results, many=True)
         return paginator.get_paginated_response(serializer.data)
