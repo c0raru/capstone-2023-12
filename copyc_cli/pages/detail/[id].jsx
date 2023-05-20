@@ -218,13 +218,13 @@ export default function ProductDetail() {
 
   }
 
-  const images = form.images.map((item) => item.image)
+  const images = form?.images?.map((item) => item)
 
   return (
     <MainLayout inversed removeSearch>
       <Page>
         <Slider {...settings}>
-          {images.map((image) => {
+          {images?.map((image) => {
             return (
               <div>
                 <SquareImage image={image?.image} />
