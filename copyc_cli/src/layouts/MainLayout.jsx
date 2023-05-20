@@ -196,7 +196,7 @@ export default function MainLayout(props) {
   const router = useRouter()
   const user = useUser()
   const search = () => {
-    router.push("/shop/search/" + encodeURIComponent(query))
+    router.push("/search/" + encodeURIComponent(query))
   }
   useEffect(() => {
     if(!router.isReady) return

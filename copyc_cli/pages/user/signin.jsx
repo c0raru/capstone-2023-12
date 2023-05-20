@@ -45,18 +45,7 @@ export default function Signin() {
         onChange={(e) => update("password", e.target.value)}
       />
       <Button onClick={login}>로그인</Button>
-      <SplitTextButton
-        items={[
-          {
-            name: "아이디 찾기",
-            onClick: () => router.push("/user/find_username"),
-          },
-          {
-            name: "비밀번호 찾기",
-            onClick: () => router.push("/user/find_password"),
-          },
-        ]}
-      />
+
       <Center>
         카픽에서 사진공유를 해보세요{" "}
         <Link href="/user/signup">회원가입</Link>
