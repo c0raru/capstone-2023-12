@@ -11,6 +11,7 @@ import axios from "axios";
 import Editor from 'react-pell'
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+import { useUser } from "src/hooks/UserContext";
 
 const StepImage = styled.img`
   width: 75px;
@@ -143,6 +144,7 @@ const img = {
 export default function Upload() {
 
   const router = useRouter()
+  const user = useUser()
 
   const [files, setFiles] = useState([]);
   const [category, setCategory] = useState(null);
@@ -226,7 +228,7 @@ export default function Upload() {
       "attached": attached
     }
     var res = await axios.post("/product/product", form)
-    router.push("/detail/" + res.data.id)
+    location.href = "/detail/" + res.data.id
     setIsLoading(false)
   }
 

@@ -286,11 +286,6 @@ export default function MainLayout(props) {
                       <Icon name="heart outline" />
                     </div>
                   </Link>
-                  <Link href="/notice">
-                    <div>
-                      <Icon name="bell outline" />
-                    </div>
-                  </Link>
                 </>
               )}
             </div>
