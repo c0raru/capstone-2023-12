@@ -19,7 +19,7 @@ const StepImage = styled.img`
 
 const Styled = styled.div`
   text-align: center;
-  padding: 50px 0px;
+  padding: 50px 20px;
 `
 
 const Title = styled.div`
