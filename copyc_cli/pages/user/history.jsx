@@ -2,6 +2,10 @@
   @page        : /user/history
   @description : 구매내역을 보여주는 페이지
 */
+import axios from "axios";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { ImageContents } from "src/components/styles";
 import MainLayout from "src/layouts/MainLayout";
 import OnlyUserLayout from "src/layouts/OnlyUserLayout";
@@ -42,9 +46,11 @@ const HistoryItem = styled.div`
           color: #212121;
         }
         .title {
-          font-size: 16px;
+          font-size: 25px;
           color: #212121;
-          margin: 4px 0px;
+          font-weight: 100;
+          margin-top: 8px;
+          margin-bottom: 0px;
         }
         .option {
           font-size: 13px;
@@ -52,7 +58,7 @@ const HistoryItem = styled.div`
         }
         .price {
           margin-top: auto;
-          font-weight: bold;
+          font-weight: 400;
           font-size: 18px;
           color: #212121;
         }
@@ -62,71 +68,40 @@ const HistoryItem = styled.div`
 `;
 
 export default function History(props) {
+  const router = useRouter()
+  const [history, setHistory] = useState([])
+  useEffect(() => {
+    axios.get("/product/viewhistory")
+    .then(({data}) => {
+      setHistory(data)
+    })
+    .catch(err => {
+      toast.error("로그인이 필요합니다.")
+      router.back()
+    })
+  }, [])
+
   return (
     <OnlyUserLayout>
     <MainLayout category="저장내역">
       <HistoryItem>
-        <div className="title">2023.04.30·저장완료</div>
         <div className="items">
-          <div>
-            <ImageContents className="thumbnail" />
-            <div>
-              <div className="brand">Brand</div>
-              <div className="title">사진 이름</div>
-              <div className="option">카픽｜카픽｜카픽</div>
-              <div className="price">100coin</div>
-            </div>
-          </div>
-          <div>
-            <ImageContents className="thumbnail" />
-            <div>
-            <div className="brand">Brand</div>
-              <div className="title">사진 이름</div>
-              <div className="option">카픽｜카픽｜카픽</div>
-              <div className="price">100coin</div>
-            </div>
-          </div>
-          <div>
-            <ImageContents className="thumbnail" />
-            <div>
-            <div className="brand">Brand</div>
-              <div className="title">사진 이름</div>
-              <div className="option">카픽｜카픽｜카픽</div>
-              <div className="price">100coin</div>
-            </div>
-          </div>
-        </div>
-      </HistoryItem>
-      <HistoryItem>
-        <div className="title">2023.04.30·저장완료</div>
-        <div className="items">
-          <div>
-            <ImageContents className="thumbnail" />
-            <div>
-            <div className="brand">Brand</div>
-              <div className="title">사진 이름</div>
-              <div className="option">카픽｜카픽｜카픽</div>
-              <div className="price">100coin</div>
-            </div>
-          </div>
-          <div>
-            <ImageContents className="thumbnail" />
-            <div>
-            <div className="brand">Brand</div>
-              <div className="title">사진 이름</div>
-              <div className="option">카픽｜카픽｜카픽</div>
-              <div className="price">100coin</div>
-            </div>
-          </div>
-          <div>
-            <ImageContents className="thumbnail" />
-            <div>
-            <div className="brand">Brand</div>
-              <div className="title">사진 이름</div>
-              <div className="option">카픽｜카픽｜카픽</div>
-              <div className="price">100coin</div>
-            </div>
-          </div>
+          {
+            history.map(item => {
+              return (
+                <div onClick={()=>{
+                  router.push("/detail/" + item.product.id)
+                }}>
+                  <ImageContents className="thumbnail" image={item?.product?.thumbnail} />
+                  <div>
+                    <div className="option">{item?.product?.category?.name}</div>
+                    <div className="title">{item?.product?.name}</div>
+                    <div className="price">{parseInt(item?.product?.price).toLocaleString()} coin</div>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
       </HistoryItem>
     </MainLayout>

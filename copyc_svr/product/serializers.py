@@ -74,6 +74,17 @@ class LikeSerializer(ModelSerializer):
     
 class ViewHistorySerializer(ModelSerializer):
 
+    thumbnail = SerializerMethodField()
+    product = ProductSerializer()
+    
+    def get_thumbnail(self, obj):
+        queryset = ProductImage.objects.filter(product=obj.product).first()
+        return ProductImageSerializer(queryset).data.get("image", "")
+
+    # def get_product(self, obj):
+    #     return O
+    #     return
+
     class Meta:
         model = ViewHistory
         fields = '__all__'

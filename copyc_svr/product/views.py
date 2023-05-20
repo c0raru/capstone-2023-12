@@ -130,6 +130,16 @@ class LikeViewSet(ViewSet):
 
 
 class ViewHistoryViewSet(ViewSet):
+
+    def list(self, request):
+        if not request.user.is_authenticated:
+            return Response({
+                "user": ["로그인이 필요합니디."]
+            }, status=400)
+        queryset = ViewHistory.objects.filter(user=request.user).order_by('pk')
+        serializer = ViewHistorySerializer(queryset, many=True)
+        return Response(serializer.data)
+
     def create(self, request):
         serializer = ViewHistorySerializer(data=request.data)
         if serializer.is_valid():
