@@ -23,7 +23,9 @@ class ProductSerializer(ModelSerializer):
     category = CategorySerializer()
     thumbnail = SerializerMethodField()
     
-    # TODO: thumbnail 완료하기
+    def get_thumbnail(self, obj):
+        queryset = ProductImage.objects.filter(product=obj).first()
+        return ProductImageSerializer(queryset).data.get("image", "")
 
     class Meta:
         model = Product
@@ -57,7 +59,7 @@ class ProductDetailSerializer(ModelSerializer):
     
     class Meta:
         model = Product
-        fields = ("id", "name", "thumbnail", "price", "date", "category", "brand", "contents", "images", "size")
+        fields = ("id", "name", "price", "date", "category", "brand", "contents", "images", "size")
 
 class LikeListSerializer(ModelSerializer):
     product = ProductSerializer()

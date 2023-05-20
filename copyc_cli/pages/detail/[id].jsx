@@ -214,6 +214,7 @@ export default function ProductDetail() {
     return <></>;
   }
 
+<<<<<<< HEAD
   let images = [form.thumbnail,] // ? ...form?.images?.map((item) => item.image)];
   if(form?.images && form?.images?.length > 0) {
     images = images.concat(form.images);
@@ -221,6 +222,14 @@ export default function ProductDetail() {
   const saveHandler = () => {
 
   }
+=======
+  const images = form.images.map((item) => item.image)
+  const count_items = Object.values(cart)
+    .map((v) => v.count)
+    .reduce((x, y) => {
+      return x + y;
+    }, 0);
+>>>>>>> acc6317b (TRhumbnail)
 
   return (
     <MainLayout inversed removeSearch>
