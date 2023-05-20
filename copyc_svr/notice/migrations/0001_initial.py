@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=128, verbose_name='공지사항 이름')),
-                ('contents', ckeditor_uploader.fields.RichTextUploadingField(verbose_name='상품내용')),
+                ('contents', ckeditor_uploader.fields.RichTextUploadingField(verbose_name='사진내용')),
                 ('fixed', models.BooleanField(default=False, verbose_name='상위 고정 여부')),
                 ('date', models.DateTimeField(auto_now_add=True, verbose_name='등록일')),
             ],

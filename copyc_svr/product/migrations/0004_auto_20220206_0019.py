@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='product',
             name='contents',
-            field=ckeditor_uploader.fields.RichTextUploadingField(verbose_name='상품내용'),
+            field=ckeditor_uploader.fields.RichTextUploadingField(verbose_name='사진내용'),
         ),
     ]

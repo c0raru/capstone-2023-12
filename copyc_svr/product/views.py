@@ -59,6 +59,10 @@ class ProductViewSet(ViewSet):
         return JsonResponse({"id": product.id}, safe=False)
 
     def retrieve(self, request, pk=None):
+        if not request.user.is_authenticated:
+            return Response({
+                "user": ["로그인이 필요합니디."]
+            }, status=400)
         queryset = Product.objects.all()
         item = get_object_or_404(queryset, pk=pk)
         serializer = ProductDetailSerializer(item)
@@ -87,7 +91,7 @@ class LikeViewSet(ViewSet):
 
         if product == None or not Product.objects.filter(id=product).exists():
             return Response({
-                "user": ["존재하지 않는 상품입니다."]
+                "user": ["존재하지 않는 사진입니다."]
             }, status=400)
 
         data = {
@@ -129,45 +133,3 @@ class ViewHistoryViewSet(ViewSet):
             serializer.save()
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
-
-
-class CartViewSet(ViewSet):
-
-    def create(self, request):
-        if not request.user.is_authenticated:
-            return Response({
-                "user": ["로그인이 필요합니디."]
-            }, status=400)
-
-        count = request.data.get("count", 0)
-        option = request.data.get("option", 0)
-
-        if count == 0:
-            return JsonResponse({
-                "user": ["상품이 1개 이상이어야합니다."]
-            }, status=400)
-
-        if not Size.objects.filter(id=option).exists():
-            return JsonResponse({
-                "user": ["존재하지 않는 상품입니다."]
-            }, status=400)
-
-        size = Size.objects.get(id=option)
-
-        cart = Cart(
-            user=request.user,
-            count=count,
-            option=size
-        )
-
-        cart.save()
-        return Response(CartSerializer(cart).data, status=201)
-
-    def list(self, request):
-        if not request.user.is_authenticated:
-            return Response({
-                "user": ["로그인이 필요합니디."]
-            }, status=400)
-        queryset = Cart.objects.filter(user=request.user).order_by('pk')
-        serializer = CartSerializer(queryset, many=True)
-        return Response(serializer.data)

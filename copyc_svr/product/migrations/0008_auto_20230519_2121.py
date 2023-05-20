@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='productimage',
             name='product',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='product.Product', verbose_name='상품'),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='product.Product', verbose_name='사진'),
         ),
     ]

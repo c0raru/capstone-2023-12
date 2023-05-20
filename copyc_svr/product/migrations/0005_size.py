@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('tall_high', models.IntegerField(verbose_name='키(최대)')),
                 ('weight_row', models.IntegerField(verbose_name='몸무게(최소)')),
                 ('weight_high', models.IntegerField(verbose_name='몸무게(최대)')),
-                ('product', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='product.Product', verbose_name='상품')),
+                ('product', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='product.Product', verbose_name='사진')),
             ],
             options={
                 'verbose_name_plural': '사이즈',

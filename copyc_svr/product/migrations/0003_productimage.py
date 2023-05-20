@@ -15,8 +15,8 @@ class Migration(migrations.Migration):
             name='ProductImage',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.FileField(upload_to='uploads/%Y%m%d/', verbose_name='상품 세부이미지')),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='product.Product', verbose_name='상품')),
+                ('image', models.FileField(upload_to='uploads/%Y%m%d/', verbose_name='사진 세부이미지')),
+                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='product.Product', verbose_name='사진')),
             ],
         ),
     ]

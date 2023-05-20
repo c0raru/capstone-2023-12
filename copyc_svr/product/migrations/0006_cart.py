@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('count', models.IntegerField(verbose_name='개수')),
-                ('option', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='product.Size', verbose_name='상품 옵션(크기)')),
+                ('option', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='product.Size', verbose_name='사진 옵션(크기)')),
                 ('user', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL, verbose_name='사용자')),
             ],
         ),

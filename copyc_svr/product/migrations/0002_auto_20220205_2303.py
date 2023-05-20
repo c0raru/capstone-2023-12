@@ -28,15 +28,15 @@ class Migration(migrations.Migration):
             name='Product',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, verbose_name='상품명')),
-                ('thumbnail', models.FileField(upload_to='uploads/%Y%m%d/', verbose_name='상품 썸네일')),
-                ('contents', ckeditor.fields.RichTextField(verbose_name='상품내용')),
+                ('name', models.CharField(max_length=100, verbose_name='사진명')),
+                ('thumbnail', models.FileField(upload_to='uploads/%Y%m%d/', verbose_name='사진 썸네일')),
+                ('contents', ckeditor.fields.RichTextField(verbose_name='사진내용')),
                 ('price', models.IntegerField(verbose_name='금액(KRW)')),
                 ('date', models.DateTimeField(auto_now_add=True, verbose_name='등록일')),
                 ('brand', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='product.Brand', verbose_name='브랜드')),
             ],
             options={
-                'verbose_name_plural': '상품',
+                'verbose_name_plural': '사진',
             },
         ),
         migrations.AlterField(
@@ -49,11 +49,11 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('date', models.DateTimeField(auto_now_add=True, verbose_name='열람 일시')),
-                ('product', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='product.Product', verbose_name='상품')),
+                ('product', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='product.Product', verbose_name='사진')),
                 ('user', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL, verbose_name='사용자')),
             ],
             options={
-                'verbose_name_plural': '상품 열람 로그',
+                'verbose_name_plural': '사진 열람 로그',
             },
         ),
         migrations.AddField(
@@ -66,11 +66,11 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('date', models.DateTimeField(auto_now_add=True, verbose_name='좋아요 등록일')),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='product.Product', verbose_name='상품')),
+                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='product.Product', verbose_name='사진')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='사용자')),
             ],
             options={
-                'verbose_name_plural': '선호 상품',
+                'verbose_name_plural': '선호 사진',
             },
         ),
     ]
