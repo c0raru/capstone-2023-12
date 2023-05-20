@@ -39,7 +39,6 @@ class ProductImage(models.Model):
     product = models.ForeignKey(to=Product, verbose_name="사진", on_delete=models.CASCADE, null=True)
     image = models.FileField("사진 세부이미지", upload_to='uploads/%Y%m%d/')
     code = models.CharField("코드명", max_length=100, unique=True)
-    # attached = models.FileField("첨부 파일", upload_to="fileserver/")
     uploader = models.ForeignKey(to='user.User', on_delete=models.SET_NULL, null=True)
 
 class Like(models.Model):

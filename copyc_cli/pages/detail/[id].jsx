@@ -16,6 +16,7 @@ import { Button } from "src/components/button";
 import { Counter } from "src/components/input";
 import { toast } from "react-toastify";
 import axios from "axios";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 const Page = styled.div`
   .slick-dots {
@@ -257,10 +258,16 @@ export default function ProductDetail() {
             저장하기
           </Button>
           <CheckButtonGroup>
-            <CheckButton>
-              <Icon name="share alternate" />
-              공유하기
-            </CheckButton>
+            <CopyToClipboard text={"http://copyc.ga" + router.asPath}
+              onCopy={() => {
+                toast.success("URL이 복사되었습니다.")
+              }}>
+              {/* <button>Copy to clipboard with button</button> */}
+              <CheckButton>
+                <Icon name="share alternate" />
+                공유하기
+              </CheckButton>
+            </CopyToClipboard>
             <CheckButton onClick={likeHandler}>
               {isLike ? (
                 <Icon name="heart" color="red" />
