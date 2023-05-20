@@ -19,16 +19,6 @@ export default function Signin() {
       "url": "/terms/user",
       "is_active": false
     },
-    {
-      "text": "플러스친구 추가 후 이벤트 소식받기(선택)",
-      "url": "/terms/event",
-      "is_active": false
-    },
-    {
-      "text": "마케팅 활용(선택)",
-      "url": "/terms/marketing",
-      "is_active": false
-    },          
   ])
   const onClickHandler = (id) => {
     options[id].is_active = !options[id].is_active

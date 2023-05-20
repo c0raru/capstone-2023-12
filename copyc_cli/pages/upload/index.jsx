@@ -220,7 +220,7 @@ export default function Upload() {
       "attached": attached
     }
     var res = await axios.post("/product/product", form)
-    router.push("/product/" + res.data.id)
+    router.push("/detail/" + res.data.id)
   }
 
   const Textarea = styled.textarea`

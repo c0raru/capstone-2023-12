@@ -275,7 +275,7 @@ export default function MainLayout(props) {
                 <div className="category">{props.category}</div>
               ) : (
                 <Link href="/">
-                  <img src="/next/images/logo.svg" style={{height: 60, cursor: "pointer"}}/>
+                  <img src="/next/images/logo.png" style={{height: 60, cursor: "pointer"}}/>
                 </Link>
               )}
             </div>
