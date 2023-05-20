@@ -73,12 +73,6 @@ export default function SigninForm() {
         <Input type="password" placeholder="비밀번호 확인" value={form.password_check} onChange={e => update("password_check", e.target.value)} />
         <Label>이메일</Label>
         <Input placeholder="이메일" value={form.email} onChange={e => update("email", e.target.value)} />
-        <Warning>
-          비밀번호 재설정 링크, 이벤트, 쿠폰에 대한 안내가 이메일로 제공됩니다.
-          본인의 이메일을 정확하게 입력해주세요
-          <br/>
-          <div className="red">(가입 후 변경 불가능)</div>
-        </Warning>
       </div>
       <div className="bottom">
         <Button onClick={next}>회원가입 완료</Button>

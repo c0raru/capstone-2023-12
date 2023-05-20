@@ -214,7 +214,7 @@ export default function ProductDetail() {
     return <></>;
   }
 
-  let images = [form.thumbnail,] // ? ...form?.images?.map((item) => item.image)];
+  let images = [] // ? ...form?.images?.map((item) => item.image)];
   if(form?.images && form?.images?.length > 0) {
     images = images.concat(form.images);
   }

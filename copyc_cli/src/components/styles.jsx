@@ -17,7 +17,7 @@ export const Label = styled.div`
 export const ImageContents = styled.div`
   ${props => {
     return css`
-      background-image: url(${props.image || "/next/images/logo.svg"});
+      background-image: url(${props.image || "/next/images/logo.png"});
     `
   }}
   display: flex;
