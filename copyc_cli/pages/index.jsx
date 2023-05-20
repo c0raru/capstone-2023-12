@@ -43,8 +43,17 @@ const SizeRecommendButton = styled.div`
 export default function Home() {
   const product = useProduct();
   const [bestItems, setBestItems] = useState([]);
+  const [bestItem, setBestItem] = useState([]);
   const [historyItems, setHistoryItems] = useState([]);
   const [page, setPage] = useState(1)
+
+  useEffect(() => {
+    const page = 1
+    product.search(page , "", false, 1)
+    .then(({data}) => {
+      setBestItem(data.results)
+    })
+  }, [])
 
   useEffect(() => {
     const page = 1
