@@ -73,20 +73,12 @@ export default function Home() {
             <CardItems items={historyItems}/>
           </>
         ) : (
-<<<<<<< HEAD
-          <Link href = "/upload">
-        <LinkButton style={{marginTop: 24}}>
-          <Icon name="picture" />
-          이미지 업로드 
-        </LinkButton>
+        <Link href = "/upload">
+          <LinkButton style={{marginTop: 24}}>
+            <Icon name="picture" />
+            이미지 업로드 
+          </LinkButton>
         </Link>
-=======
-          <Link href="/upload/">
-            <LinkButton style={{ marginTop: 24 }}>
-              업로드하기
-            </LinkButton>
-          </Link>
->>>>>>> origin/cli0
         )}
 
         <LabelMenu title="Best Items" subtitle="전체보기" url="/best" />

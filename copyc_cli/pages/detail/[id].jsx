@@ -175,6 +175,7 @@ const Footer = styled.div`
 `;
 
 export default function ProductDetail() {
+
   const settings = {
     dots: true,
     infinite: true,
@@ -187,12 +188,9 @@ export default function ProductDetail() {
   const product = useProduct();
   const router = useRouter();
 
-  const [form, setForm] = useState(null);
+  const [form, setForm] = useState({});
   const [isLike, setIsLike] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [cart, setCart] = useState({});
 
-  const cartLength = Object.keys(cart).length;
 
   const likeHandler = () => {
     responseMessage(
@@ -200,56 +198,6 @@ export default function ProductDetail() {
     ).then(() => {
       setIsLike(!isLike);
     });
-  };
-
-  const onCartHandler = async () => {
-    if (!isOpen) {
-      setIsOpen(true);
-      return;
-    }
-    if (cartLength === 0) {
-      toast.warn("사진을 선택해주세요.");
-      return;
-    }
-    const items = Object.values(cart)
-    for(let i=0;i<items.length;i++) {
-      const item = items[i]
-      const res = await axios.post("product/cart/", {
-        "option": item.id,
-        "count": item.count
-      })
-    }
-    router.push("/shop/cart")
-  };
-
-  const onBuyHandler = () => {
-    if (!isOpen) {
-      setIsOpen(true);
-      return;
-    }
-  };
-
-  const onAddHandler = (value) => {
-    if (cart[value.id]) {
-      cart[value.id]["count"] += 1;
-    } else {
-      cart[value.id] = {
-        count: 1,
-        size: value.size,
-        id: value.id,
-      };
-    }
-    setCart({ ...cart });
-  };
-
-  const cartDeleteHandler = (id) => {
-    delete cart[id];
-    setCart({ ...cart });
-  };
-
-  const updateCount = (id, count) => {
-    cart[id].count = count;
-    setCart({ ...cart });
   };
 
   useEffect(() => {
@@ -266,12 +214,13 @@ export default function ProductDetail() {
     return <></>;
   }
 
-  const images = [form.thumbnail, ...form.images.map((item) => item.image)];
-  const count_items = Object.values(cart)
-    .map((v) => v.count)
-    .reduce((x, y) => {
-      return x + y;
-    }, 0);
+  let images = [form.thumbnail,] // ? ...form?.images?.map((item) => item.image)];
+  if(form?.images && form?.images?.length > 0) {
+    images = images.concat(form.images);
+  }
+  const saveHandler = () => {
+
+  }
 
   return (
     <MainLayout inversed removeSearch>
@@ -280,26 +229,24 @@ export default function ProductDetail() {
           {images.map((image) => {
             return (
               <div>
-                <SquareImage image={image} />
+                <SquareImage image={image?.image} />
               </div>
             );
           })}
         </Slider>
-        <Header>
+        <Header style={{marginTop: 25}}>
           <div className="category">
-            {form.brand.name} | {form.category.name}
+            {form?.category?.name}
           </div>
           <div className="title">{form.name}</div>
           <div className="price">
-            <NumberFormat
-              value={form.price}
-              displayType={"text"}
-              thousandSeparator={true}
-            />
-            coin
+            {parseInt(form.price).toLocaleString()} COIN
           </div>
         </Header>
         <Section>
+          <Button point onClick={saveHandler}>
+            저장하기
+          </Button>
           <CheckButtonGroup>
             <CheckButton>
               <Icon name="share alternate" />
@@ -316,99 +263,10 @@ export default function ProductDetail() {
           </CheckButtonGroup>
           <div
             className="description"
-            dangerouslySetInnerHTML={{ __html: form.contents }}
+            dangerouslySetInnerHTML={{ __html: form.contents?.replace("\n", "<br/>") }}
           />
         </Section>
-        {/* <Section style={{ borderTop: "1px solid #eee" }}>
-          <div className="title">이런 상품은 어때요?</div>
-          <CardItems />
-        </Section> */}
       </Page>
-      <Footer>
-        {isOpen && (
-          <div className="cover" onClick={() => setIsOpen(false)}></div>
-        )}
-        <div>
-          {isOpen && (
-            <>
-              <div>
-                <Dropdown
-                  fluid
-                  selection
-                  placeholder="사진을 선택해주세요."
-                  options={form?.size.map((item) => {
-                    return {
-                      value: item,
-                      key: item,
-                      text: item.size,
-                    };
-                  })}
-                  onChange={(e, { value }) => onAddHandler(value)}
-                  value={null}
-                />
-              </div>
-
-              {cartLength > 0 && (
-                <>
-                  <div className="item-group">
-                    {Object.keys(cart).map((key) => {
-                      return (
-                        <div>
-                          <div>
-                            <div>{cart[key].size}</div>
-                            <div style={{ color: "#A5A5A5", fontSize: 20 }}>
-                              <Icon
-                                name="close"
-                                onClick={() => cartDeleteHandler(key)}
-                              />
-                            </div>
-                          </div>
-                          <div>
-                            <div>
-                              <Counter
-                                onChange={(value) => updateCount(key, value)}
-                              />
-                            </div>
-                            <div className="price">
-                              <NumberFormat
-                                value={form.price * cart[key].count}
-                                displayType={"text"}
-                                thousandSeparator={true}
-                              />
-                              coin
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <div className="total">
-                    <div>{count_items}개 상품</div>
-                    <div>
-                      <NumberFormat
-                        value={form.price * count_items}
-                        displayType={"text"}
-                        thousandSeparator={true}
-                      />
-                      원
-                    </div>
-                  </div>
-                </>
-              )}
-            </>
-          )}
-          <div className="button-group">
-            <div>
-              <div className="button" onClick={onCartHandler}>
-                <Icon name="cart" />
-              </div>
-            </div>
-            <Button point onClick={onBuyHandler}>
-              저장하기
-            </Button>
-          </div>
-        </div>
-      </Footer>
     </MainLayout>
   );
 }

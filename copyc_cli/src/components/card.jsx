@@ -99,12 +99,10 @@ export const Card = (props) => {
       </div>
       <div className="title">{props.name}</div>
       <div className="category">
-        <span>{props.brand.name}</span>
-        <span></span>
         <span>{props.category.name}</span>
       </div>
       <div className="price">
-        {parseInt(props.price).toLocaleString()}원
+        {parseInt(props.price).toLocaleString()} coin
       </div>
     </StyledCard>
   );
@@ -112,7 +110,6 @@ export const Card = (props) => {
 
 export const CardItems = (props) => {
   const items = props.items || [];
-  console.log(items)
   return (
     <Grid columns={2}>
       {items.map((item) => {
