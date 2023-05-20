@@ -61,9 +61,9 @@ export default function Home() {
     <MainLayout>
       <section>
         <ImageBannerContents>
-          <div><span>Best</span></div>
+          <div><span>NEW</span></div>
           <div><span>copyc</span></div>
-          <div><span>1coin</span></div>
+          <div><span>100 coin</span></div>
         </ImageBannerContents>
 
         {historyItems.length ? (
@@ -79,7 +79,7 @@ export default function Home() {
           </LinkButton>
         </Link>
         )}
-        <LabelMenu title="Best Items" subtitle="전체보기" url="/best" />
+        <LabelMenu title="New Pic" subtitle="전체보기" url="/best" />
         <CardItems items={bestItems}/>
       </section>
     </MainLayout>

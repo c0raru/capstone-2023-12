@@ -11,7 +11,7 @@ import styled from 'styled-components'
 
 export default function Best() {
   return (
-    <MainLayout category="Best Items">
+    <MainLayout category="COPYC">
       <section>
         <CardItems />
       </section>
