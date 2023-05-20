@@ -204,7 +204,15 @@ export default function ProductDetail() {
     if (!router.isReady) return;
     product.detail(router.query.id).then(({ data }) => {
       setForm(data);
-    });
+    }).catch((err) => {
+      if(err.response.status === 400) {
+        const keys = Object.keys(err.response.data)
+          const messages = err.response.data[keys[0]]
+          toast.error(messages[0])
+          router.back()
+          return
+      }
+    })
     product.is_like(router.query.id).then(({ data }) => {
       setIsLike(data.is_like);
     });

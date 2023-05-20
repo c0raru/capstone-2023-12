@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 from product.serializers import CategorySerializer, ProductDetailSerializer, ProductSerializer, SerializerMethodField
 from style.models import Request
-from product.models import Product, Size
+from product.models import Product
 
 class RequestSerializer(ModelSerializer):
 
@@ -22,14 +22,7 @@ class RequestListSerializer(ModelSerializer):
         return dict(Request.BODY_CHOICES).get(obj.body, "")
     
     def get_items(self, obj):
-        items = Product.objects.filter()
-        rows = Size.objects\
-                    .filter(tall_high__gte=obj.tall, tall_row__lte=obj.tall)\
-                    .filter(weight_high__gte=obj.weight, weight_row__gte=obj.weight)
-        output = []
-        for row in rows:
-            output.append(ProductSerializer(row.product).data)
-        return output
+        return []
 
     class Meta:
         model = Request

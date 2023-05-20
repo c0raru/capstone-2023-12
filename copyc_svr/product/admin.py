@@ -5,10 +5,6 @@ class ProductImageInline(admin.TabularInline):
     model = models.ProductImage
     extra = 0
 
-class SizeInline(admin.TabularInline):
-    model = models.Size
-    extra = 1
-
 class ViewHistoryInline(admin.TabularInline):
     model = models.ViewHistory
     readonly_fields = ('user', 'product', 'date')
@@ -45,4 +41,4 @@ class CategoryAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['id', 'thumbnail', 'brand', 'category', 'name', 'date']
     list_display_links = ['id', 'thumbnail', 'name']
-    inlines = (ProductImageInline, SizeInline, LikeInline, ViewHistoryInline, )
+    inlines = (ProductImageInline, LikeInline, ViewHistoryInline, )

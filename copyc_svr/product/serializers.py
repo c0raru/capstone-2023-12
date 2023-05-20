@@ -1,6 +1,6 @@
 from dataclasses import field
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
-from product.models import Brand, Cart, Category, Product, ProductImage, Like, Size, ViewHistory
+from product.models import Brand, Category, Product, ProductImage, Like, ViewHistory
 from rest_framework.exceptions import ValidationError
 
 class BrandSerializer(ModelSerializer):
@@ -37,29 +37,19 @@ class ProductImageSerializer(ModelSerializer):
         model = ProductImage
         fields = ['id', 'image']
 
-class SizeSerializer(ModelSerializer):
-    class Meta:
-        model = Size
-        fields = ["id", "size"]
-
 class ProductDetailSerializer(ModelSerializer):
 
     brand = BrandSerializer()
     category = CategorySerializer()
     images = SerializerMethodField()
-    size = SerializerMethodField()
 
     def get_images(self, obj):
         queryset = ProductImage.objects.filter(product=obj)
         return ProductImageSerializer(queryset, many=True).data
     
-    def get_size(self, obj):
-        queryset = Size.objects.filter(product=obj)
-        return SizeSerializer(queryset, many=True).data
-    
     class Meta:
         model = Product
-        fields = ("id", "name", "price", "date", "category", "brand", "contents", "images", "size")
+        fields = ("id", "name", "price", "date", "category", "brand", "contents", "images")
 
 class LikeListSerializer(ModelSerializer):
     product = ProductSerializer()
@@ -86,17 +76,6 @@ class ViewHistorySerializer(ModelSerializer):
 
     class Meta:
         model = ViewHistory
-        fields = '__all__'
-
-class CartSerializer(ModelSerializer):
-    option = SizeSerializer()
-    product = SerializerMethodField()
-
-    def get_product(self, cart):
-        return ProductSerializer(cart.option.product).data
-
-    class Meta:
-        model = Cart
         fields = '__all__'
 
 

@@ -46,7 +46,6 @@ class Like(models.Model):
     user = models.ForeignKey(to=get_user_model(), verbose_name="사용자", on_delete=models.CASCADE)
     product = models.ForeignKey(to=Product, verbose_name="사진", on_delete=models.CASCADE)
     date = models.DateTimeField("좋아요 등록일", auto_now_add=True)
-
     class Meta:
         verbose_name_plural = '선호 사진'
 
@@ -60,36 +59,3 @@ class ViewHistory(models.Model):
 
     def __str__(self):
         return self.name
-
-class Size(models.Model):
-    SIZES = [
-        ("S", "S"),
-        ("M", "M"),
-        ("L", "L"),
-        ("XL", "XL"),
-        ("XXL", "XXL"),
-        ("XXXL", "XXXL"),
-    ]
-    product = models.ForeignKey(to=Product, verbose_name="사진", null=True, on_delete=models.SET_NULL)
-    size = models.CharField(verbose_name="크기", choices=SIZES, max_length=10)
-    tall_row = models.IntegerField(verbose_name="키(최소)")
-    tall_high = models.IntegerField(verbose_name="키(최대)")
-    weight_row = models.IntegerField(verbose_name="몸무게(최소)")
-    weight_high = models.IntegerField(verbose_name="몸무게(최대)")
-
-    class Meta:
-        verbose_name_plural = '사이즈'
-
-    def __str__(self):
-        return "[%s] 키: %d~%dcm, 몸무게: %d~%dkg"%(
-            self.size,
-            self.tall_row,
-            self.tall_high,
-            self.weight_row,
-            self.weight_high
-        )
-
-class Cart(models.Model):
-    option = models.ForeignKey(to=Size, verbose_name="사진 옵션(크기)", null=True, on_delete=models.SET_NULL)
-    count = models.IntegerField(verbose_name="개수")
-    user = models.ForeignKey(to=get_user_model(), verbose_name="사용자", null=True, on_delete=models.SET_NULL)
