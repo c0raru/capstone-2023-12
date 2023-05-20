@@ -214,13 +214,11 @@ export default function ProductDetail() {
     return <></>;
   }
 
-  let images = [] // ? ...form?.images?.map((item) => item.image)];
-  if(form?.images && form?.images?.length > 0) {
-    images = images.concat(form.images);
-  }
   const saveHandler = () => {
 
   }
+
+  const images = form.images.map((item) => item.image)
 
   return (
     <MainLayout inversed removeSearch>

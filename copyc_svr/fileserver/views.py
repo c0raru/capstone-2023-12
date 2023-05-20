@@ -7,6 +7,7 @@ from rest_framework import authentication, permissions
 from django.http import FileResponse
 from django.core.files.storage import FileSystemStorage
 from .models import File as FileModel
+from product.models import ProductImage as ProductImageModel
 from django.views.static import serve
 import secrets
 
@@ -28,12 +29,10 @@ class File(APIView):
             return JsonResponse({
                 "user": ["로그인이 필요합니디."]
             }, status=400)
-
-        purpose = request.data.get('purpose', '')
         code = secrets.token_hex(nbytes=16)
         attached = request.FILES.get("file", None)
         user = request.user if request.user.is_authenticated else None
-        file = FileModel(code=code, attached=attached, uploader=user, purpose=purpose)
+        file = ProductImageModel(code=code, image=attached, uploader=user)
         file.save()
         return JsonResponse({
             "code": code
