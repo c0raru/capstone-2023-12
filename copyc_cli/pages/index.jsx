@@ -80,16 +80,9 @@ export default function Home() {
           </LinkButton>
         </Link>
         )}
-
         <LabelMenu title="Best Items" subtitle="전체보기" url="/best" />
         <CardItems items={bestItems}/>
-
       </section>
-     {/* <HelpDesk>
-        <div>도움이 필요하신가요?</div>
-        <Button color="blue" onClick={() => router.push("/contact")}>1:1 문의하기</Button>
-      </HelpDesk>
-        <SizeRecommendButton onClick={() => router.push("/styles/")}>사이즈 추천</SizeRecommendButton> */}
     </MainLayout>
   );
 }

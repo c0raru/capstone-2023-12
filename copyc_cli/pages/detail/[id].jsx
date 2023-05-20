@@ -204,6 +204,9 @@ export default function ProductDetail() {
     if (!router.isReady) return;
     product.detail(router.query.id).then(({ data }) => {
       setForm(data);
+      if(data.is_new) {
+        toast.success(parseInt(data.price).toLocaleString() + "코인이 차감되었습니다.")
+      }
     }).catch((err) => {
       if(err.response.status === 400) {
         const keys = Object.keys(err.response.data)

@@ -42,7 +42,7 @@ class ProductDetailSerializer(ModelSerializer):
     brand = BrandSerializer()
     category = CategorySerializer()
     images = SerializerMethodField()
-
+        
     def get_images(self, obj):
         queryset = ProductImage.objects.filter(product=obj)
         return ProductImageSerializer(queryset, many=True).data

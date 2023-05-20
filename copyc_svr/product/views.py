@@ -69,6 +69,7 @@ class ProductViewSet(ViewSet):
         queryset = Product.objects.all()
         item = get_object_or_404(queryset, pk=pk)
         serializer = ProductDetailSerializer(item)
+        is_new = False
         if not ViewHistory.objects.filter(user=request.user, product=item).exists():
             user = UserModel.objects.get(id=request.user.id)
             if user.coin < item.price:
@@ -76,9 +77,12 @@ class ProductViewSet(ViewSet):
                     "user": ["코인이 부족합니다."]
                 }, status=400)
             user.coin = user.coin - item.price
-            user.save()            
+            user.save()
             ViewHistory(user=request.user, product=item).save()
-        return Response(serializer.data)
+            is_new = True
+        outs = serializer.data
+        outs['is_new'] = is_new
+        return Response(outs)
 
 class LikeViewSet(ViewSet):
 
