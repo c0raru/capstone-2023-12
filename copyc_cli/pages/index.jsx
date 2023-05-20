@@ -51,7 +51,7 @@ export default function Home() {
     const page = 1
     product.search(page , "", false, 1)
     .then(({data}) => {
-      setBestItem(data.results)
+      setBestItem(data.results.length == 0 ? {} : data.results[0])
     })
   }, [])
 
@@ -69,10 +69,10 @@ export default function Home() {
   return (
     <MainLayout>
       <section>
-        <ImageBannerContents>
+        <ImageBannerContents image={bestItem.thumbnail} onClick={() => router.push("/detail/" + bestItem.id)} style={{cursor: "pointer"}}>
           <div><span>NEW</span></div>
-          <div><span>copyc</span></div>
-          <div><span>100 coin</span></div>
+          <div><span>{bestItem.name}</span></div>
+          <div><span>{bestItem.price} coin</span></div>
         </ImageBannerContents>
 
         {historyItems.length ? (
