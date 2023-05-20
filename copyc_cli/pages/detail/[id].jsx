@@ -175,6 +175,25 @@ const Footer = styled.div`
   }
 `;
 
+const DownloadList = styled.div`
+  padding-top: 10px;
+  >a {
+    display: flex;
+    padding: 20px 10px;
+    font-size: 17px;
+    color: #000 !important;
+    .filename {
+      margin-right: auto;
+    }
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    &:hover {
+      background-color: #727272;
+      color: #fff;
+    }
+  }
+`
+
 export default function ProductDetail() {
 
   const settings = {
@@ -254,9 +273,9 @@ export default function ProductDetail() {
           </div>
         </Header>
         <Section>
-          <Button point onClick={saveHandler}>
+          {/* <Button point onClick={saveHandler}>
             저장하기
-          </Button>
+          </Button> */}
           <CheckButtonGroup>
             <CopyToClipboard text={"http://copyc.online" + router.asPath}
               onCopy={() => {
@@ -277,6 +296,16 @@ export default function ProductDetail() {
               찜 하기
             </CheckButton>
           </CheckButtonGroup>
+          <DownloadList>
+            {form?.images?.map(item => {
+              return (
+                <a href={item.image} download>
+                  <div className="filename">{item.filename}</div>
+                  <Icon name="download" />
+                </a>
+              )
+            })}
+          </DownloadList>
           <div
             className="description"
             dangerouslySetInnerHTML={{ __html: form.contents?.replace("\n", "<br/>") }}

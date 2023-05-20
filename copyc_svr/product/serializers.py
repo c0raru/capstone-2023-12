@@ -2,6 +2,7 @@ from dataclasses import field
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from product.models import Brand, Category, Product, ProductImage, Like, ViewHistory
 from rest_framework.exceptions import ValidationError
+import os
 
 class BrandSerializer(ModelSerializer):
 
@@ -32,10 +33,14 @@ class ProductSerializer(ModelSerializer):
         fields = ("id", "name", "thumbnail", "price", "date", "category", "brand")
 
 class ProductImageSerializer(ModelSerializer):
-
+    filename = SerializerMethodField()
+    
+    def get_filename(self, obj):
+        return os.path.basename(obj.image.name)
+    
     class Meta:
         model = ProductImage
-        fields = ['id', 'image']
+        fields = ['id', 'image', 'filename']
 
 class ProductDetailSerializer(ModelSerializer):
 
