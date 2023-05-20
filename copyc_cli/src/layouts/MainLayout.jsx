@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useUser } from "src/hooks/UserContext";
+import axios from "axios";
 
 const Component = styled.div`
   display: flex;
@@ -195,6 +196,11 @@ export default function MainLayout(props) {
   const [query, setQuery] = useState("")
   const router = useRouter()
   const user = useUser()
+  const logout = () => {
+    alert("로그아웃 되셨습니다")
+    axios.delete('/user')
+    .then(function(){window.location.href='/'})
+  }
   const search = () => {
     router.push("/search/" + encodeURIComponent(query))
   }
@@ -243,6 +249,8 @@ export default function MainLayout(props) {
                 <div onClick={() => router.push("/user/history")}>저장 내역</div>
                 <div onClick={() => router.push("/user/like")}>찜 내역</div>
                 <div onClick={() => router.push("/user/password/reset")}>비밀번호 변경</div>
+
+                <div onClick={logout}>로그아웃</div>
             </div>
         </MenuBackground>
       </Menu>
