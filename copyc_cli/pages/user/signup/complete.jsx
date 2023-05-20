@@ -44,8 +44,9 @@ export default function SigninComplete() {
         <div>🎉</div>
         <div>환영합니다!</div>
         <div>
-          회원가입이 정상적으로 완료되었습니다.<br/>
-          로그인 후 카픽을 이용해 주세요.
+          회원가입을 축하드립니다! <br/>
+          1000코인을 지급해 드렸어요 ! <br/>
+          로그인 후 카픽을 이용해 보세요 ~ !! <br/>
         </div>
       </Page>
       <div className="bottom">

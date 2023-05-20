@@ -12,6 +12,7 @@ import Editor from 'react-pell'
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import { useUser } from "src/hooks/UserContext";
+import OnlyUserLayout from "src/layouts/OnlyUserLayout";
 
 const StepImage = styled.img`
   width: 75px;
@@ -256,6 +257,7 @@ export default function Upload() {
   }
 
   return (
+    <OnlyUserLayout>
     <MainLayout>
       <Styled>
         <StepImage src={top_step[step].src}/>
@@ -351,5 +353,6 @@ export default function Upload() {
         )
       }
     </MainLayout>
+    </OnlyUserLayout>
   )
 }

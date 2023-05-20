@@ -274,7 +274,7 @@ export default function ProductDetail() {
               ) : (
                 <Icon name="heart outline" />
               )}
-              선호 스타일
+              찜 하기
             </CheckButton>
           </CheckButtonGroup>
           <div
