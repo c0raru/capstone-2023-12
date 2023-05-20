@@ -9,8 +9,8 @@ export function ProductProvider({children}) {
     useEffect(() => {
     }, [])
 
-    function search(page, query="", best=false) {
-        return axios.get("/product/product/?page=" + page + "&query=" + encodeURIComponent(query) + "&best=" + best)
+    function search(page, query="", best=false, limit=99999) {
+        return axios.get("/product/product/?page=" + page + "&query=" + encodeURIComponent(query) + "&best=" + best + "&limit=" + limit)
     }
 
     function detail(id) {

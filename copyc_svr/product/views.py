@@ -26,6 +26,13 @@ class CategoryViewSet(ViewSet):
 class ProductViewSet(ViewSet):
 
     def list(self, request):
+
+        limit = request.GET.get("limit", None) 
+        if limit == None:
+            limit = 99999999
+        limit = int(limit)
+        # queryset[:limit]
+
         paginator = StandardResultsSetPagination()
         queryset = Product.objects.order_by('pk')
         query = request.GET.get("query")
@@ -35,7 +42,7 @@ class ProductViewSet(ViewSet):
                 Q(brand__name=query) | 
                 Q(name__contains=query)
             )
-        results = paginator.paginate_queryset(queryset, request)
+        results = paginator.paginate_queryset(queryset[:limit], request)
         serializer = ProductSerializer(results, many=True)
         return paginator.get_paginated_response(serializer.data)
 

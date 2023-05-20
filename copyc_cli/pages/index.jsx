@@ -48,7 +48,7 @@ export default function Home() {
 
   useEffect(() => {
     const page = 1
-    product.search(page)
+    product.search(page , "", false, 6)
     .then(({data}) => {
       setBestItems(data.results)
       setPage(page + 1)
