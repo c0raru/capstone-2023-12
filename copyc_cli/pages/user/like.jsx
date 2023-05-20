@@ -26,7 +26,7 @@ export default function UserLike() {
         <CardItems items={items}/>
         {
           items.length === 0 && (
-            <WarningText>선호하는 상품이 없습니다.</WarningText>
+            <WarningText>선호하는 사진이 없습니다.</WarningText>
           )
         }
       </section>

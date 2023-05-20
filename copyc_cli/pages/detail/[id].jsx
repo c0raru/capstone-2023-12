@@ -258,7 +258,7 @@ export default function ProductDetail() {
             저장하기
           </Button>
           <CheckButtonGroup>
-            <CopyToClipboard text={"http://copyc.ga" + router.asPath}
+            <CopyToClipboard text={"http://copyc.online" + router.asPath}
               onCopy={() => {
                 toast.success("URL이 복사되었습니다.")
               }}>

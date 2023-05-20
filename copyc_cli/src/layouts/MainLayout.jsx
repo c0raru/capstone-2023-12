@@ -232,7 +232,7 @@ export default function MainLayout(props) {
             }
             <div className="splitButton">
                 <div onClick={() => router.push("/")}>홈</div>
-                <div onClick={() => router.push("/user/like")}>나의 사진</div>
+                <div onClick={() => router.push("/user/like")}>찜 내역</div>
             </div>
             <div className="menu">
                 <div className="title">About</div>
@@ -240,10 +240,9 @@ export default function MainLayout(props) {
                 <div onClick={() => router.push("/notice")}>공지사항</div>
 
                 <div className="title">My page</div>
-                <div onClick={() => router.push("/user/history")}>저장내역</div>
-                <div onClick={() => router.push("/user/like")}>찜내역</div>
-                <div onClick={() => router.push("/contact")}>문의하기</div>
-                <div onClick={() => router.push("/user/password/reset")}>비밀번호 재설정</div>
+                <div onClick={() => router.push("/user/history")}>저장 내역</div>
+                <div onClick={() => router.push("/user/like")}>찜 내역</div>
+                <div onClick={() => router.push("/user/password/reset")}>비밀번호 변경</div>
             </div>
         </MenuBackground>
       </Menu>

@@ -66,7 +66,6 @@ export default function Home() {
           <div><span>1coin</span></div>
         </ImageBannerContents>
 
-        {/* 스타일 추천 여부에 따른 기록 및 추천 배너 출현 여부 분기 */}
         {historyItems.length ? (
           <>
             <LabelMenu title="History" subtitle="내역보기" url="/styles/history" />

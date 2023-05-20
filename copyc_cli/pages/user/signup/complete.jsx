@@ -45,7 +45,7 @@ export default function SigninComplete() {
         <div>환영합니다!</div>
         <div>
           회원가입이 정상적으로 완료되었습니다.<br/>
-          로그인 후 서비스를 이용해 주세요.
+          로그인 후 카픽을 이용해 주세요.
         </div>
       </Page>
       <div className="bottom">
