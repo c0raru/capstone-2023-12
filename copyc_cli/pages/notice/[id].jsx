@@ -23,7 +23,7 @@ export default function CustomerNoticeDetail() {
     if(!router.isReady) {
       return;
     }
-    axios.get("/notice/1").then(({data}) => {
+    axios.get("/notice/" + router.query.id).then(({data}) => {
       setData(data);
     })
   }, [router.isReady])
