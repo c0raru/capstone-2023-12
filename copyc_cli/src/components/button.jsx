@@ -25,7 +25,7 @@ export const Button = styled.button`
         }
         if(props.point) {
             return css`
-                background: #7A60FF;
+                background: #727272;
             `
         }
         return css`
@@ -110,6 +110,7 @@ const StyledLinkButton = styled.button`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border:0px;
     padding: 24px;
     cursor: pointer;
     &:hover {
