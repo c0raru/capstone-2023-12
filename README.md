@@ -105,7 +105,7 @@ An artist living in Seoul will share the appearance of various buildings. An art
 ```
 <br/>
 
-## 5.  링크
+## 5. 카픽 링크
 
 최종 배포 이후 추가 예정
 <br/>
