@@ -105,9 +105,9 @@ An artist living in Seoul will share the appearance of various buildings. An art
 ```
 <br/>
 
-## 5. 사용법
+## 5. COPYC 
 
-최종 배포 이후 추가 예정
+링크
 <br/>
 
 ## 6. 상세 기능
