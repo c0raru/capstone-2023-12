@@ -139,4 +139,4 @@ A webtoon artist living in the heart of Seoul will share the appearance of vario
 **최종 발표**
 - [수행결과보고서]()
 - [최종발표자료]()
-- [포스터]()
+- [포스터](https://drive.google.com/file/d/1DQi_FWJPINpLeSVhU7cidoJar3BHiPct/view?usp=share_link)
