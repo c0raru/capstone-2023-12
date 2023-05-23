@@ -1,6 +1,3 @@
-팀페이지 주소 : 2023년 12조 https://kookmin-sw.github.io/capstone-2023-12
-<br/>
-
 <div align=center>   
     <img alt="main" src="img/Copyc.png" width=500>
 </div>
@@ -99,7 +96,7 @@ The photos that may seem useless to someone who will be shared on Copyc will be 
 
 ## 3. 시연 영상
 
-[![Video Label](http://img.youtube.com/vi/vuvmn3MwAls/0.jpg)](https://youtu.be/vuvmn3MwAls)
+[![Video Label](http://img.youtube.com/vi/9cNWrtGs6is/0.jpg)](https://youtu.be/9cNWrtGs6is)
 <br/>
 
 ## 4. 팀 소개
@@ -139,6 +136,6 @@ The photos that may seem useless to someone who will be shared on Copyc will be 
 - [중간발표자료](https://drive.google.com/file/d/1F9brloHz6PgaKsG11iMcyqmsTgwyOUM1/view?usp=share_link)
    
 **최종 발표**
-- [수행결과보고서]()
-- [최종발표자료]()
+- [수행결과보고서](https://drive.google.com/file/d/1QPYmrUkeV-sLQE9Sjjhp8fhm5XcEJFd8/view?usp=drive_link)
+- [최종발표자료](https://drive.google.com/file/d/1DUOWmquOpQoBKr_06bXS7jzSPqt9EMgR/view?usp=drive_link)
 - [포스터](https://drive.google.com/file/d/1DQi_FWJPINpLeSVhU7cidoJar3BHiPct/view?usp=share_link)
