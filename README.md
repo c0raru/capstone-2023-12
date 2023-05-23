@@ -10,7 +10,6 @@
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black">
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
     <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black">
-    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white">
     <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
     <img src="https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=Yarn&logoColor=white">
     <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
@@ -33,10 +32,10 @@
 
 1. [프로젝트 소개](#1-프로젝트-소개)
 2. [Abstract](#2-abstract)
-3. [소개 영상](#3-소개-영상)
+3. [시연 영상](#3-시연-영상)
 4. [팀 소개](#4-팀-소개)
-5. [사용법](#5-사용법)
-6. [상세 기능](#6-상세-기능)
+5. [주요 기능](#5-주요-기능)
+6. [시스템 구성도](#6-시스템-구성도)
 7. [Document](#7-document)
 <br/>
 
@@ -45,8 +44,7 @@
 **Copyc**
 > [카픽] : Copyright + Picture
 > 
-<img src="img/MainPage.png" width=250> <img src="img/InPage.png" width=250>
-
+<img src="img/사용예시.png" width=400>
 
 - 웹툰 작가들을 위한 이미지 공유 모바일 플랫폼
 - 저작권 허용, 상업적 이용 OK
@@ -96,14 +94,13 @@ A webtoon artist living in the heart of Seoul will share the appearance of vario
     - Webtoon artists, aspiring artists, and other illustrators who want to use freely available photos without copyright restrictions.
 <br/>
 
-## 3. 소개 영상
-프로젝트 데모 Figma 디자인 시연 영상입니다.
-
-시연 영상에서는 **Copyc**에서 제공될 기능들을 미리 확인하실 수 있습니다.
+## 3. 시연 영상
 
 [![Video Label](http://img.youtube.com/vi/vuvmn3MwAls/0.jpg)](https://youtu.be/vuvmn3MwAls)
+<br/>
 
 ## 4. 팀 소개
+<img src="img/사원증.png" width=300>
 
 - 정현서
 
@@ -118,25 +115,28 @@ A webtoon artist living in the heart of Seoul will share the appearance of vario
 
 ```
 * 학번: ****1682
-* Role: BackEnd, Deployment
+* Role: BackEnd, Infra
 * E-mail: ydim@kookmin.ac.kr
 ```
 <br/>
 
-## 5. COPYC 
-
-링크
+## 5. 주요 기능 
+<img src="img/주요기능.png" width=900>
 <br/>
 
-## 6. 상세 기능
-[<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white">](https://www.figma.com/file/8diQISW7sASCoCX9au06pY/Untitled?node-id=0%3A1&t=eLfRtNymkIzxVkie-1)
+<img src="img/플로우차트.png" width=750>
+<br/>
 
-위 아이콘을 눌러 Figma 페이지로 이동하실 수 있습니다.
-
-<img src="img/1.png">
-<img src="img/2.png">
+## 6. 시스템 구성도
+<img src="img/시스템구성도.png" width=600>
+<br/>
 
 ## 7. Document
 **중간 발표**
 - [중간보고서](https://drive.google.com/file/d/12mVLmLgrs-cM3martpn90DJj2BWDxbky/view?usp=share_link)
 - [중간발표자료](https://drive.google.com/file/d/1F9brloHz6PgaKsG11iMcyqmsTgwyOUM1/view?usp=share_link)
+   
+**최종 발표**
+- [수행결과보고서]()
+- [최종발표자료]()
+- [포스터]()
