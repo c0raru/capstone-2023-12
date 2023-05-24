@@ -121,7 +121,8 @@ The photos that may seem useless to someone who will be shared on Copyc will be 
 
 ## 5. 주요 기능 
 <img src="img/주요기능.png" width=900>
-<br/>
+
+---
 
 <img src="img/3.png" width=750>
 <img src="img/4.png" width=750>
