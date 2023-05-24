@@ -124,9 +124,11 @@ The photos that may seem useless to someone who will be shared on Copyc will be 
 
 ## 5. 주요 기능 
 <img src="img/주요기능.png" width=900>
-<br/>
 
-<img src="img/플로우차트.png" width=750>
+##
+<img src="img/3.png" width=750>
+<img src="img/4.png" width=750>
+<img src="img/5.png" width=750>
 <br/>
 
 ## 6. 시스템 구성도
@@ -143,5 +145,5 @@ The photos that may seem useless to someone who will be shared on Copyc will be 
 - [최종발표자료](https://drive.google.com/file/d/1DUOWmquOpQoBKr_06bXS7jzSPqt9EMgR/view?usp=drive_link)
 - [포스터](https://drive.google.com/file/d/1DQi_FWJPINpLeSVhU7cidoJar3BHiPct/view?usp=share_link)
 
-**추가 자료**
+**기타**
 - [Figma](https://www.figma.com/file/8diQISW7sASCoCX9au06pY/Untitled?type=design)
