@@ -1,5 +1,5 @@
 <div align=center>   
-    <img alt="main" src="img/Copyc.png" width=500>
+    <img alt="main" src="img/Copyc.png" width=450>
 </div>
 <br/>
 
@@ -102,7 +102,7 @@ The photos that may seem useless to someone who will be shared on Copyc will be 
 ## 4. 팀 소개
 <img src="img/사원증.png" width=350>
 
-- 정현서
+👸 **정현서**
 
 ```
 * 학번: ****1693
@@ -110,7 +110,7 @@ The photos that may seem useless to someone who will be shared on Copyc will be 
 * E-mail: coraru@kookmin.ac.kr
 ```
 
-- 임예도
+🙇 **임예도**
 
 ```
 * 학번: ****1682
@@ -121,13 +121,15 @@ The photos that may seem useless to someone who will be shared on Copyc will be 
 
 ## 5. 주요 기능 
 <img src="img/주요기능.png" width=900>
-<br/>
 
-<img src="img/플로우차트.png" width=750>
+##
+<img src="img/3.png" width=750>
+<img src="img/4.png" width=750>
+<img src="img/5.png" width=750>
 <br/>
 
 ## 6. 시스템 구성도
-<img src="img/시스템구성도.png" width=600>
+<img src="img/시스템구성도.png" width=500>
 <br/>
 
 ## 7. Document
@@ -139,3 +141,6 @@ The photos that may seem useless to someone who will be shared on Copyc will be 
 - [수행결과보고서](https://drive.google.com/file/d/1QPYmrUkeV-sLQE9Sjjhp8fhm5XcEJFd8/view?usp=drive_link)
 - [최종발표자료](https://drive.google.com/file/d/1DUOWmquOpQoBKr_06bXS7jzSPqt9EMgR/view?usp=drive_link)
 - [포스터](https://drive.google.com/file/d/1DQi_FWJPINpLeSVhU7cidoJar3BHiPct/view?usp=share_link)
+
+**기타**
+- [Figma](https://www.figma.com/file/8diQISW7sASCoCX9au06pY/Untitled?type=design)
