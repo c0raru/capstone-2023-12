@@ -41,7 +41,8 @@
 
 ## 1. 프로젝트 소개
 
-**Copyc**
+**https://copyc.online/**
+> COPYC   
 > 카픽 [Copyright + Picture]
  
 <img src="img/사용예시.png" width=400>
@@ -74,7 +75,7 @@ Copyc에서 나누게 될 누군가에게는 쓸모없을 그 사진들이 웹�
 
 ## 2. Abstract
 
-**Copyc**
+> COPYC   
 > [Copyright + Picture]
 
 > - Image Sharing Mobile Web Platform for Webtoon Writers
