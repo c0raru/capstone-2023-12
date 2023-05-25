@@ -38,7 +38,7 @@
 
 ## 1. 프로젝트 소개
 
-**https://copyc.online**
+**<https://copyc.online>**
 > Copyc   
 > 카픽 [Copyright + Picture]
  
